@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/image_background"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/bottomLayout"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp">
+
+            <EditText
+                android:id="@+id/edittextFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:hint="Enter Mobile Number"
+                android:inputType="textCapWords"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="#999"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edittextLastName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:hint="Enter Mobile Number"
+                android:inputType="textCapWords"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="#999"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edittextEmailId"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:hint="Enter Mobile Number"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="#999"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#c00"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/button_facebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp"
+                        android:text="Male"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/button_google"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp"
+                        android:text="Female"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ToggleButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/toggle_selector"
+                    android:textOff=""
+                    android:textOn="" />
+
+
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@mipmap/semitransparent_black"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical"
+            android:text="Already a Member ?"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textviewSignin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left|center_vertical"
+            android:text="Signin Now"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
