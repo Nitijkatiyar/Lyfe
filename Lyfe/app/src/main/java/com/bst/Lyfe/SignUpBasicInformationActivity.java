@@ -25,6 +25,7 @@ public class SignUpBasicInformationActivity extends AppCompatActivity {
 
 
     ActivityChanger activityChanger;
+
     EditText _firstName, _LastName, _address, _emailId;
     Spinner _country, _state, _city, bloodGroup, _bloodDonationCycle;
     TextView _DOB;
@@ -37,6 +38,7 @@ public class SignUpBasicInformationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_basicinformation);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
