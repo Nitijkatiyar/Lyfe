@@ -23,8 +23,6 @@ public class SignUpMobileVerificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_mobileverification);
-        getSupportActionBar().hide();
-
 
         activityChanger = new ActivityChanger(SignUpMobileVerificationActivity.this);
 

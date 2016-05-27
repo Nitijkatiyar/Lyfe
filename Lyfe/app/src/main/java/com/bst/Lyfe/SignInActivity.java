@@ -23,7 +23,7 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-        getSupportActionBar().hide();
+
         activityChanger = new ActivityChanger(SignInActivity.this);
 
         _login = (Button) findViewById(R.id.buttonLogin);
