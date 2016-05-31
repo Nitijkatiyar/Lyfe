@@ -14,7 +14,7 @@
         android:layout_above="@+id/bottomLayout"
         android:layout_alignParentTop="true"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".activities.MainActivity">
 
         <LinearLayout
             android:id="@+id/relative"

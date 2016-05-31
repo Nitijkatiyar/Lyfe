@@ -1,4 +1,4 @@
-package com.bst.Lyfe;
+package com.bst.Lyfe.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,41 +10,41 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bst.Lyfe.R;
 import com.bst.utils.ActivityChanger;
 
-public class SignUpMobileVerificationActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
 
-    Button _validateOTP;
-    TextView _signin;
-    EditText _mobileNumber, _otp;
+    Button _login;
+    TextView _signup;
+    EditText _userName, _password;
     ActivityChanger activityChanger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_mobileverification);
+        setContentView(R.layout.activity_signin);
 
-        activityChanger = new ActivityChanger(SignUpMobileVerificationActivity.this);
+        activityChanger = new ActivityChanger(SignInActivity.this);
 
-        _validateOTP = (Button) findViewById(R.id.buttonValidatePIN);
-        _signin = (TextView) findViewById(R.id.textviewSignin);
-        _mobileNumber = (EditText) findViewById(R.id.edittextMobileNumber);
-        _otp = (EditText) findViewById(R.id.edittextOTP);
+        _login = (Button) findViewById(R.id.buttonLogin);
+        _signup = (TextView) findViewById(R.id.textviewSignup);
+        _userName = (EditText) findViewById(R.id.edittextUsername);
+        _password = (EditText) findViewById(R.id.edittextPassword);
 
-        _validateOTP.setOnClickListener(new View.OnClickListener() {
+        _login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activityChanger.startActivity(new Intent(SignUpMobileVerificationActivity.this, SignUpBasicInformationActivity.class));
+                activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class));
             }
         });
 
-        _signin.setOnClickListener(new View.OnClickListener() {
+        _signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activityChanger.startActivity(new Intent(SignUpMobileVerificationActivity.this, SignInActivity.class));
+                activityChanger.startActivity(new Intent(SignInActivity.this, SignUpMobileVerificationActivity.class));
             }
         });
-
     }
 
 
@@ -70,4 +70,9 @@ public class SignUpMobileVerificationActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
