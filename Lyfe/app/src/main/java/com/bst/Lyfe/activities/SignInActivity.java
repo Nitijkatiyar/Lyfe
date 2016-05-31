@@ -2,6 +2,7 @@ package com.bst.Lyfe.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,17 +33,32 @@ public class SignInActivity extends AppCompatActivity {
         _userName = (EditText) findViewById(R.id.edittextUsername);
         _password = (EditText) findViewById(R.id.edittextPassword);
 
-        _login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class));
-            }
-        });
-
         _signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 activityChanger.startActivity(new Intent(SignInActivity.this, SignUpMobileVerificationActivity.class));
+
+            }
+        });
+
+        _login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(_userName.getText().toString().length()>0 && _password.getText().toString().length()>0) {
+                    if (_password.getText().toString().trim().length() >= 6) {
+                        activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                    } else {
+                        Snackbar.make(v, "Password is too short", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
+                }
+                else
+                    {
+                        Snackbar.make(v, "Please Fill all Details", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
+
+
             }
         });
     }

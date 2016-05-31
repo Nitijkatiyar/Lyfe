@@ -2,6 +2,7 @@ package com.bst.Lyfe.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +36,17 @@ public class SignUpMobileVerificationActivity extends AppCompatActivity {
         _validateOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activityChanger.startActivity(new Intent(SignUpMobileVerificationActivity.this, SignUpBasicInformationActivity.class));
+                if (_mobileNumber.getText().toString().trim().length() >= 10) {
+                    if (_otp.getText().toString().trim().length() == 6) {
+                        activityChanger.startActivity(new Intent(SignUpMobileVerificationActivity.this, SignUpBasicInformationActivity.class));
+                    } else {
+                        Snackbar.make(v, "Enter a valid OTP", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
+                } else {
+                    Snackbar.make(v, "Enter valid mobile number", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
 
