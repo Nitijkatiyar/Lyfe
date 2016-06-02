@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@mipmap/image_background">
+    android:background="@mipmap/image_background"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_above="@+id/bottomLayout"
         android:layout_alignParentTop="true"
+        android:layout_weight="1"
         android:orientation="vertical"
         tools:context=".activities.MainActivity">
 
@@ -61,27 +61,27 @@
                 android:drawableLeft="@mipmap/ic_username"
                 android:hint="Username or Mobile number"
                 android:inputType="textEmailAddress"
+                android:maxLength="20"
                 android:paddingLeft="10dp"
-                android:textSize="16sp"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="#999"
-                android:maxLength="20"/>
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/edittextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:textSize="16sp"
                 android:background="@mipmap/semitransparent_white"
                 android:drawableLeft="@mipmap/ic_password"
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:paddingLeft="10dp"
                 android:maxLength="20"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorWhite"
-                android:textColorHint="#999" />
+                android:textColorHint="#999"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/buttonLogin"
@@ -89,10 +89,10 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
-                android:textSize="16sp"
                 android:background="@drawable/whiteborder_transparent"
                 android:text="Login into account"
-                android:textColor="@color/colorWhite" />
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -154,8 +154,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/whiteborder_transparent"
                     android:text="Facebook"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/button_google"
@@ -164,10 +164,10 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="1"
-                    android:textSize="16sp"
                     android:background="@drawable/whiteborder_transparent"
                     android:text="Google"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
             </LinearLayout>
 
 
@@ -185,8 +185,9 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="right|center_vertical"
             android:text="New Here ?"
             android:textColor="@color/colorWhite"
@@ -194,9 +195,10 @@
 
         <TextView
             android:id="@+id/textviewSignup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
+            android:layout_weight="1"
             android:gravity="left|center_vertical"
             android:text="Signup Now"
             android:textColor="@color/colorWhite"

@@ -44,9 +44,7 @@ public class FlawkItProgressBar {
             }
             pDialog.setCancelable(false);
             View view = LayoutInflater.from(mContext).inflate(R.layout.progressbar, null);
-            LoadingImageView loadingImageView = (LoadingImageView) view.findViewById(R.id.loadingiv);
-            loadingImageView.setMaskColor(mContext.getResources().getColor(R.color.colorPrimary));
-            loadingImageView.setMaskOrientation(1);
+
             pDialog.setContentView(view);
         } catch (Exception e) {
             //IresLog.e(null, "Progress Dialog Initialization Exception", e);

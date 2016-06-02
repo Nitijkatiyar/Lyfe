@@ -62,8 +62,8 @@
                 android:drawableLeft="@mipmap/ic_mobile"
                 android:hint="Enter Mobile Number"
                 android:inputType="numberDecimal"
-                android:paddingLeft="10dp"
                 android:maxLength="10"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="#999"
                 android:textSize="16sp" />
@@ -75,9 +75,10 @@
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
                 android:drawableLeft="@mipmap/ic_password"
-                android:ems="10"
+                android:ems="6"
                 android:hint="Enter OTP"
                 android:inputType="numberPassword"
+                android:maxLength="6"
                 android:paddingLeft="10dp"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="#999"
@@ -109,8 +110,9 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="right|center_vertical"
             android:text="Already a Member ?"
             android:textColor="@color/colorWhite"
@@ -118,9 +120,10 @@
 
         <TextView
             android:id="@+id/textviewSignin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
+            android:layout_weight="1"
             android:gravity="left|center_vertical"
             android:text="Signin Now"
             android:textColor="@color/colorWhite"

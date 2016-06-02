@@ -3,60 +3,111 @@ package com.bst.Lyfe.activities;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.bst.Lyfe.R;
+import com.bst.Lyfe.fragments.DonateFragment;
+import com.bst.Lyfe.fragments.MoreFragment;
+import com.bst.Lyfe.fragments.NotificationFragment;
+import com.bst.Lyfe.fragments.ProfileFragment;
+import com.bst.Lyfe.fragments.RequestBloodFragment;
+import com.bst.bottombar.BottomBar;
+import com.bst.bottombar.BottomBarTab;
+import com.bst.bottombar.OnTabClickListener;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
     private Boolean app_closed = false;
-    DrawerLayout drawer;
+    private Toolbar toolbar;
+    BottomBar mBottomBar;
+    CoordinatorLayout mainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Notifications");
+
+        mainLayout = (CoordinatorLayout) findViewById(R.id.mainLayout);
+
+        mBottomBar = BottomBar.attach(this, savedInstanceState);
+        // Disable the left bar on tablets and behave exactly the same on mobile and tablets instead.
+        mBottomBar.noTabletGoodness();
+
+        // Show all titles even when there's more than three tabs.
+//        mBottomBar.useFixedMode();
+
+        // Use the dark theme.
+        mBottomBar.useDarkTheme();
+
+        mBottomBar.setItems(
+                new BottomBarTab(R.mipmap.notification_selected, "Notifications"),
+                new BottomBarTab(R.mipmap.blood_donate_selected, "Donate"),
+                new BottomBarTab(R.mipmap.blood_request_selected, "Request"),
+                new BottomBarTab(R.mipmap.user_profile_selected, "Profile"),
+                new BottomBarTab(R.mipmap.more_selected, "More")
+        );
+
+
+        mBottomBar.mapColorForTab(0, ContextCompat.getColor(this, R.color.colorWhite));
+        mBottomBar.mapColorForTab(1, ContextCompat.getColor(this, R.color.colorWhite));
+        mBottomBar.mapColorForTab(2, ContextCompat.getColor(this, R.color.colorWhite));
+        mBottomBar.mapColorForTab(3, ContextCompat.getColor(this, R.color.colorWhite));
+
+//        mBottomBar.setActiveTabColor(ContextCompat.getColor(this, R.color.colorWhite));
+
+        mBottomBar.setDefaultTabPosition(0);
+
+        changeFragmentTo(new NotificationFragment());
+        // Listen for tab changes
+        mBottomBar.setOnTabClickListener(new OnTabClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onTabSelected(int position) {
+                if (position == 0) {
+                    toolbar.setTitle("Notifications");
+                    changeFragmentTo(new NotificationFragment());
+                } else if (position == 1) {
+                    toolbar.setTitle("Donate");
+                    changeFragmentTo(new DonateFragment());
+                } else if (position == 2) {
+                    toolbar.setTitle("Request");
+                    changeFragmentTo(new RequestBloodFragment());
+                } else if (position == 3) {
+                    toolbar.setTitle("Profile");
+                    changeFragmentTo(new ProfileFragment());
+                } else if (position == 4) {
+                    toolbar.setTitle("More");
+                    changeFragmentTo(new MoreFragment());
+                }
+            }
+
+            @Override
+            public void onTabReSelected(int position) {
+                // The user reselected a tab at the specified position!
             }
         });
+    }
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+    public void changeFragmentTo(Fragment fragment) {
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.menu_fragment, fragment).commit();
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            closedApplication();
-        }
+        closedApplication();
     }
 
     private void closedApplication() {
@@ -65,7 +116,7 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
         this.app_closed = true;
-        Snackbar snackbar = Snackbar.make(drawer, "Press again to exit.", Snackbar.LENGTH_SHORT);
+        Snackbar snackbar = Snackbar.make(mainLayout, "Press again to exit.", Snackbar.LENGTH_SHORT);
         snackbar.getView();
         TextView textView = (TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
         textView.setTextColor(Color.WHITE);
@@ -78,50 +129,5 @@ public class MainActivity extends AppCompatActivity
         }, 2000);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }

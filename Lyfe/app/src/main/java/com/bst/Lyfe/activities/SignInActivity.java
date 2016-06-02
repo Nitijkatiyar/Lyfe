@@ -28,7 +28,10 @@ public class SignInActivity extends AppCompatActivity {
 
         activityChanger = new ActivityChanger(SignInActivity.this);
 
+
         _login = (Button) findViewById(R.id.buttonLogin);
+
+
         _signup = (TextView) findViewById(R.id.textviewSignup);
         _userName = (EditText) findViewById(R.id.edittextUsername);
         _password = (EditText) findViewById(R.id.edittextPassword);
@@ -44,19 +47,17 @@ public class SignInActivity extends AppCompatActivity {
         _login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(_userName.getText().toString().length()>0 && _password.getText().toString().length()>0) {
+                if (_userName.getText().toString().length() > 0 && _password.getText().toString().length() > 0) {
                     if (_password.getText().toString().trim().length() >= 6) {
                         activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class));
                     } else {
                         Snackbar.make(v, "Password is too short", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     }
+                } else {
+                    Snackbar.make(v, "Please Fill all Details", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
                 }
-                else
-                    {
-                        Snackbar.make(v, "Please Fill all Details", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                    }
 
 
             }

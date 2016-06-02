@@ -33,17 +33,17 @@ public class SignUpPasswordActivity extends AppCompatActivity {
         _buttonPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (_enterPass.getText().toString().trim().length() >= 6 && _enterPass.getText().toString().trim().length() >= 6) {
-                    if (_enterPass.getText().toString().trim().equals(_enterPass.getText().toString().trim())) {
-                        activityChanger.startActivity(new Intent(SignUpPasswordActivity.this, SignUpMobileVerificationActivity.class));
+                if (_enterPass.getText().toString().trim().length() >= 6 && _reenterPass.getText().toString().trim().length() >= 6) {
+                    if (_enterPass.getText().toString().trim().equals(_reenterPass.getText().toString().trim())) {
+                        activityChanger.startActivity(new Intent(SignUpPasswordActivity.this, MainActivity.class));
                     } else {
-                        Snackbar.make(view, "Password was not match", Snackbar.LENGTH_LONG)
+                        Snackbar.make(view, "Password did not match", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     }
                 } else
 
                 {
-                    Snackbar.make(view, "Please enter 6 digit password", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, "Please enter atleast 6 digit password", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
 

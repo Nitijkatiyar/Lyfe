@@ -6,13 +6,11 @@
     android:background="@mipmap/image_background"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingBottom="20dp">
+        android:layout_weight="1">
 
         <LinearLayout
             android:id="@+id/topLayout"
@@ -136,51 +134,23 @@
                 android:textColorHint="#999"
                 android:textSize="16sp" />
 
-            <Spinner
-                android:id="@+id/spinnerCountry"
+            <TextView
+                android:id="@+id/textviewAddress"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@mipmap/semitransparent_white"
-                android:spinnerMode="dialog"></Spinner>
-
-            <Spinner
-                android:id="@+id/spinnerState"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@mipmap/semitransparent_white"
-                android:spinnerMode="dialog"></Spinner>
-
-            <Spinner
-                android:id="@+id/spinnerCity"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@mipmap/semitransparent_white"
-                android:spinnerMode="dialog"></Spinner>
-
-            <EditText
-                android:id="@+id/edittextAddress"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
                 android:gravity="center_vertical"
-                android:hint="House/Flat No."
-                android:inputType="textEmailAddress"
+                android:hint="Address"
+                android:minHeight="40dp"
+                android:paddingBottom="5dp"
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:paddingTop="5dp"
                 android:textColorHint="#999"
-                android:textSize="16sp" />
+                android:textSize="16sp"></TextView>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -201,7 +171,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@mipmap/semitransparent_white"></Spinner>
+                android:background="@mipmap/semitransparent_white"
+                android:spinnerMode="dialog"></Spinner>
 
             <Spinner
                 android:id="@+id/spinnerBloodDonationCycle"
@@ -210,7 +181,22 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@mipmap/semitransparent_white"></Spinner>
+                android:background="@mipmap/semitransparent_white"
+                android:spinnerMode="dialog"></Spinner>
+
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/whiteborder_transparent"
+                android:text="Submit"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
 

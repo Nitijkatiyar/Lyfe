@@ -6,39 +6,35 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bst.Lyfe.R;
-import com.bst.Lyfe.models.CountryStateCityModel;
 import com.bst.networkutils.JsonParsingException;
 import com.bst.networkutils.NetworkAsyncTask;
 import com.bst.networkutils.NetworkCallBack;
 import com.bst.networkutils.NetworkException;
-import com.bst.networkutils.NetworkTools;
 import com.bst.networkutils.ThreadTaskIds;
 import com.bst.utils.ActivityChanger;
 import com.bst.utils.FlawkItProgressBar;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 public class SignUpBasicInformationActivity extends AppCompatActivity implements NetworkCallBack {
@@ -46,36 +42,26 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
 
     ActivityChanger activityChanger;
 
-    EditText _firstName, _LastName, _address, _emailId;
-    Spinner _country, _state, _city, bloodGroup, _bloodDonationCycle;
-    TextView _DOB;
+    EditText _firstName, _LastName, _emailId;
+    Spinner bloodGroup, _bloodDonationCycle;
+    TextView _DOB, _addressCity;
 
-    private DatePicker datePicker;
     private Calendar calendar;
     private int year, month, day;
-    ArrayList<CountryStateCityModel> _countries;
-    ArrayList<CountryStateCityModel> _states;
-    ArrayList<CountryStateCityModel> _cities;
-    ArrayAdapter<String> _countriesAdapter;
-    ArrayAdapter<String> _stateAdapter;
-    ArrayAdapter<String> _citiesAdapter;
-    List<String> countrynames;
-    List<String> statenames;
-    List<String> citynames;
+
     List<String> bloodgroups;
     List<String> bloodDonationCycle;
-    private int _countryCode = 0, _stateCode = 0, _cityCode = 0;
     ProgressDialog progressDialog;
     FlawkItProgressBar progressBar;
-    boolean launched = true;
+    int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
+    Button _submit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_basicinformation);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         activityChanger = new ActivityChanger(SignUpBasicInformationActivity.this);
         progressBar = FlawkItProgressBar.getInstance();
@@ -86,30 +72,40 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
 
-
-        countrynames = new ArrayList<>();
-        countrynames.add("Select your country");
-        statenames = new ArrayList<>();
-        statenames.add("Select your state");
-        citynames = new ArrayList<>();
-        citynames.add("Select your city");
+        _submit = (Button) findViewById(R.id.buttonSubmit);
+        _submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activityChanger.startActivity(new Intent(SignUpBasicInformationActivity.this, SignUpPasswordActivity.class));
+            }
+        });
 
         _firstName = (EditText) findViewById(R.id.edittextFirstName);
         _LastName = (EditText) findViewById(R.id.edittextLastName);
-        _address = (EditText) findViewById(R.id.edittextAddress);
         _emailId = (EditText) findViewById(R.id.edittextEmailId);
 
         _DOB = (TextView) findViewById(R.id.textviewDOB);
+        _addressCity = (TextView) findViewById(R.id.textviewAddress);
 
-        _country = (Spinner) findViewById(R.id.spinnerCountry);
+        _addressCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent =
+                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                                    .build(SignUpBasicInformationActivity.this);
+                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+                } catch (GooglePlayServicesRepairableException e) {
+                } catch (GooglePlayServicesNotAvailableException e) {
+                }
 
-        _state = (Spinner) findViewById(R.id.spinnerState);
-        _state.setVisibility(View.GONE);
+            }
+        });
 
-        _city = (Spinner) findViewById(R.id.spinnerCity);
-        _city.setVisibility(View.GONE);
 
+        bloodgroups = new ArrayList<>();
         bloodGroup = (Spinner) findViewById(R.id.spinnerBloodGroup);
+        bloodgroups.add("Select Blood group");
         bloodgroups.add("A+");
         bloodgroups.add("A-");
         bloodgroups.add("B+");
@@ -132,8 +128,9 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
 
             }
         });
-
+        bloodDonationCycle = new ArrayList<>();
         _bloodDonationCycle = (Spinner) findViewById(R.id.spinnerBloodDonationCycle);
+        bloodDonationCycle.add("Select Blood donation cycle");
         bloodDonationCycle.add("After 1 month");
         bloodDonationCycle.add("After 2 month");
         bloodDonationCycle.add("After 3 month");
@@ -166,56 +163,24 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
             e.printStackTrace();
         }
 
-        _country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                               @Override
-                                               public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                                   if (position == 0) {
-                                                       return;
-                                                   }
-                                                   _countryCode = _countries.get(position).getCode();
-                                                   NetworkAsyncTask networkAsyncTask = NetworkAsyncTask.getInstance();
-                                                   try {
-                                                       networkAsyncTask.startNetworkCall(ThreadTaskIds.GET_STATES, SignUpBasicInformationActivity.this);
-                                                   } catch (NetworkException e) {
-                                                       e.printStackTrace();
-                                                   }
-                                               }
-
-                                               @Override
-                                               public void onNothingSelected(AdapterView<?> parent) {
-
-                                               }
-                                           }
-
-        );
-
-        _state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-
-                                         {
-                                             @Override
-                                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                                 if (position == 0) {
-                                                     return;
-                                                 }
-                                                 _stateCode = _states.get(position).getCode();
-                                                 NetworkAsyncTask networkAsyncTask = NetworkAsyncTask.getInstance();
-                                                 try {
-                                                     networkAsyncTask.startNetworkCall(ThreadTaskIds.GET_CITIES, SignUpBasicInformationActivity.this);
-                                                 } catch (NetworkException e) {
-                                                     e.printStackTrace();
-                                                 }
-                                             }
-
-                                             @Override
-                                             public void onNothingSelected(AdapterView<?> parent) {
-
-                                             }
-                                         }
-
-        );
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlaceAutocomplete.getPlace(this, data);
+                Log.i("Place:", " " + place.getName());
+                _addressCity.setText(place.getAddress());
+            } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
+                Status status = PlaceAutocomplete.getStatus(this, data);
+                Log.i("Place:", " " + status.getStatusMessage());
+            } else if (resultCode == RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -227,7 +192,7 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_save) {
-            activityChanger.startActivity(new Intent(SignUpBasicInformationActivity.this, SignUpPasswordActivity.class));
+
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -281,181 +246,14 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
 
     @Override
     public Object onNetworkCall(int taskId, Object o) throws JsonParsingException, JsonParsingException {
-        if (taskId == ThreadTaskIds.GET_COUNTRIES) {
-            String url = "http://iamrohit.in/lab/php_ajax_country_state_city_dropdown/api.php?type=getCountries";
-            NetworkTools networkTools = NetworkTools.getInstance();
-            if (networkTools.checkNetworkConnection(SignUpBasicInformationActivity.this) && url.length() > 0) {
-                final JSONObject response = networkTools.getJsonData(SignUpBasicInformationActivity.this, url);
 
-                if (response != null) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                parseJsonData(response, ThreadTaskIds.GET_COUNTRIES);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                }
-
-            } else {
-                Toast.makeText(SignUpBasicInformationActivity.this, "Please check your internet connection.", Toast.LENGTH_SHORT).show();
-            }
-        }
-        if (taskId == ThreadTaskIds.GET_STATES) {
-            String url = "http://iamrohit.in/lab/php_ajax_country_state_city_dropdown/api.php?type=getStates&countryId=" + _countryCode;
-            NetworkTools networkTools = NetworkTools.getInstance();
-            if (networkTools.checkNetworkConnection(SignUpBasicInformationActivity.this) && url.length() > 0) {
-                final JSONObject response = networkTools.getJsonData(SignUpBasicInformationActivity.this, url);
-
-                if (response != null) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                parseJsonData(response, ThreadTaskIds.GET_STATES);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                }
-
-            } else {
-                Toast.makeText(SignUpBasicInformationActivity.this, "Please check your internet connection.", Toast.LENGTH_SHORT).show();
-            }
-        }
-        if (taskId == ThreadTaskIds.GET_CITIES) {
-            String url = "http://iamrohit.in/lab/php_ajax_country_state_city_dropdown/api.php?type=getCities&stateId=" + _stateCode;
-            NetworkTools networkTools = NetworkTools.getInstance();
-            if (networkTools.checkNetworkConnection(SignUpBasicInformationActivity.this) && url.length() > 0) {
-                final JSONObject response = networkTools.getJsonData(SignUpBasicInformationActivity.this, url);
-
-                if (response != null) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                parseJsonData(response, ThreadTaskIds.GET_CITIES);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                }
-
-            } else {
-                Toast.makeText(SignUpBasicInformationActivity.this, "Please check your internet connection.", Toast.LENGTH_SHORT).show();
-            }
-        }
         return null;
     }
 
-    private void parseJsonData(JSONObject response, int taskid) throws JSONException {
-        if (taskid == ThreadTaskIds.GET_COUNTRIES) {
-            if (response.getString("status").equalsIgnoreCase("success")) {
-                JSONObject jsonObject = response.getJSONObject("result");
-                jsonToMap(jsonObject, ThreadTaskIds.GET_COUNTRIES);
-                sortList(_countries);
-
-                for (int i = 0; i < _countries.size(); i++) {
-                    countrynames.add(_countries.get(i).getName());
-                }
-                _countriesAdapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_spinner_item, countrynames);
-                _countriesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                _country.setAdapter(_countriesAdapter);
-            }
-
-        }
-        if (taskid == ThreadTaskIds.GET_STATES) {
-            if (response.getString("status").equalsIgnoreCase("success")) {
-                JSONObject jsonObject = response.getJSONObject("result");
-                jsonToMap(jsonObject, ThreadTaskIds.GET_STATES);
-                sortList(_states);
-
-                for (int i = 0; i < _states.size(); i++) {
-                    statenames.add(_states.get(i).getName());
-                }
-                if (_states.size() > 0) {
-                    _stateAdapter = new ArrayAdapter<String>(this,
-                            android.R.layout.simple_spinner_item, statenames);
-                    _stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    _state.setAdapter(_stateAdapter);
-                    _state.setVisibility(View.VISIBLE);
-                }
-            }
-        }
-        if (taskid == ThreadTaskIds.GET_CITIES) {
-            if (response.getString("status").equalsIgnoreCase("success")) {
-                JSONObject jsonObject = response.getJSONObject("result");
-                jsonToMap(jsonObject, ThreadTaskIds.GET_CITIES);
-                sortList(_cities);
-
-                for (int i = 0; i < _cities.size(); i++) {
-                    citynames.add(_cities.get(i).getName());
-                }
-                if (_cities.size() > 0) {
-                    _citiesAdapter = new ArrayAdapter<String>(this,
-                            android.R.layout.simple_spinner_item, citynames);
-                    _citiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    _city.setAdapter(_citiesAdapter);
-                    _city.setVisibility(View.VISIBLE);
-                }
-            }
-        }
-    }
-
-    public void sortList(List<CountryStateCityModel> list) {
-        Collections.sort(list, new Comparator<CountryStateCityModel>() {
-            @Override
-            public int compare(CountryStateCityModel s1, CountryStateCityModel s2) {
-                return s1.getName().compareToIgnoreCase(s2.getName());
-            }
-        });
-    }
 
     @Override
     public Object onNetworkError(int taskId, NetworkException o) {
         return null;
-    }
-
-    public void jsonToMap(JSONObject t, int type) throws JSONException {
-
-        HashMap<String, String> map = new HashMap<String, String>();
-        JSONObject jObject = t;
-        Iterator<?> keys = jObject.keys();
-        if (type == ThreadTaskIds.GET_COUNTRIES) {
-            _countries = new ArrayList<>();
-        } else if (type == ThreadTaskIds.GET_STATES) {
-            _states = new ArrayList<>();
-        } else if (type == ThreadTaskIds.GET_CITIES) {
-            _cities = new ArrayList<>();
-        }
-        while (keys.hasNext()) {
-            String key = (String) keys.next();
-            String value = jObject.getString(key);
-            if (type == ThreadTaskIds.GET_COUNTRIES) {
-                CountryStateCityModel countryStateCityModel = new CountryStateCityModel();
-                countryStateCityModel.setCode(Integer.parseInt(key));
-                countryStateCityModel.setName(value);
-                _countries.add(countryStateCityModel);
-            } else if (type == ThreadTaskIds.GET_STATES) {
-                CountryStateCityModel countryStateCityModel = new CountryStateCityModel();
-                countryStateCityModel.setCode(Integer.parseInt(key));
-                countryStateCityModel.setName(value);
-                _states.add(countryStateCityModel);
-            } else if (type == ThreadTaskIds.GET_CITIES) {
-                CountryStateCityModel countryStateCityModel = new CountryStateCityModel();
-                countryStateCityModel.setCode(Integer.parseInt(key));
-                countryStateCityModel.setName(value);
-                _cities.add(countryStateCityModel);
-            }
-
-        }
-
     }
 
 

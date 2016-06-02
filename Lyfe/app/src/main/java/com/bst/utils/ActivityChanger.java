@@ -17,5 +17,6 @@ public class ActivityChanger {
 
     public void startActivity(Intent intent) {
         activity.startActivity(intent);
+
     }
 }

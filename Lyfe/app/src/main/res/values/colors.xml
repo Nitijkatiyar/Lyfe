@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#a10000</color>
+    colorWhite
     <color name="colorPrimaryDark">#a10000</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="progresslightcolor">#cc0000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
 
-    <color name="colorWhite">#FFF</color>
+
+    <color name="bb_inActiveBottomBarItemColor">#a10000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="bb_darkBackgroundColor">#FFFFFF</color>
+    <color name="bb_tabletRightBorderDark">#505050</color>
+
+    <color name="textColor">#a10000</color>
+    <color name="iconColor">#a10000</color>
+
 </resources>
