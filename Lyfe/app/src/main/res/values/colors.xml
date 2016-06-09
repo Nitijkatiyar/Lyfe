@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#a10000</color>
-    colorWhite
     <color name="colorPrimaryDark">#a10000</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorTextBlack">#a000</color>
+    <color name="colorTextLightBlack">#8000</color>
     <color name="progresslightcolor">#cc0000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="textColorPrimary">#FFFFFF</color>
