@@ -1,16 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Request Blood"
-        android:textSize="40dp"
-        android:textStyle="bold" />
+        >
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:cropToPadding="true"
+            android:src="@mipmap/ic_launcher" />
 
-</RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="120dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             >
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:drawableLeft="@mipmap/ic_username"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:textColor="@color/progresslightcolor"
+                android:textColorHint="@color/bb_tabletRightBorderDark"
+                android:background="@null"
+                android:textSize="16sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <View
+            android:id="@+id/mr_Separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/bb_tabletRightBorderDark" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:drawableLeft="@mipmap/ic_password"
+                android:hint="@string/hint_email"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:background="@null"
+                android:textColor="@color/progresslightcolor"
+                app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                style="TextAppearence.App.TextInputLayout"
+
+                android:textSize="16sp" />
+        </android.support.design.widget.TextInputLayout>
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/bb_tabletRightBorderDark" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <EditText
+                android:id="@+id/edittextMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="40dp"
+                android:background="@null"
+                android:drawableLeft="@mipmap/ic_mobile"
+                android:hint="Enter Mobile Number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingLeft="10dp"
+                android:textColor="@color/progresslightcolor"
+                android:textColorHint="@color/bb_tabletRightBorderDark"
+                android:textSize="16sp" />
+        </android.support.design.widget.TextInputLayout>
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/bb_tabletRightBorderDark" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+
+        <Spinner
+            android:id="@+id/spinnerBloodGroup"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:background="@null"
+            android:spinnerMode="dialog"></Spinner>
+</android.support.design.widget.TextInputLayout>
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/bb_tabletRightBorderDark" />
+
+        <Button android:id="@+id/btn_signup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_submit"
+            android:background="@drawable/redborder_transparent"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/bb_inActiveBottomBarItemColor"/>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
