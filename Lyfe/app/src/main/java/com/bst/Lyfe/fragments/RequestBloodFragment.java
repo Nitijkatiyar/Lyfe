@@ -25,7 +25,7 @@ public class RequestBloodFragment extends Fragment {
     List<String> bloodgroups;
     MainActivity mainActivity;
     Button _submit;
-    EditText name, email, mobile;
+    EditText name, email, mobile,location,blood_unit;
 
     public RequestBloodFragment() {
         // Required empty public constructor
@@ -41,8 +41,10 @@ public class RequestBloodFragment extends Fragment {
                              Bundle savedInstanceState) {
         mainActivity = (MainActivity) getActivity();
         View view = inflater.inflate(R.layout.fragment_requestblood, container, false);
-        _submit = (Button) view.findViewById(R.id.btn_signup);
+        _submit = (Button) view.findViewById(R.id.submit);
         name = (EditText) view.findViewById(R.id.name);
+        location = (EditText) view.findViewById(R.id.location);
+        blood_unit = (EditText) view.findViewById(R.id.blood_unit);
         email = (EditText) view.findViewById(R.id.email);
         mobile = (EditText) view.findViewById(R.id.edittextMobileNumber);
         bloodgroups = new ArrayList<>();
@@ -74,7 +76,7 @@ public class RequestBloodFragment extends Fragment {
         _submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (name.getText().toString().trim().length() > 0 && email.getText().toString().trim().length() > 0 && mobile.getText().toString().trim().length() > 0 && bloodGroup.getSelectedItemPosition() > 1) {
+                if (name.getText().toString().trim().length() > 0 && email.getText().toString().trim().length() > 0 && mobile.getText().toString().trim().length() > 0 && bloodGroup.getSelectedItemPosition() > 1 && blood_unit.getText().toString().trim().length()>0&& location.getText().toString().trim().length()>0) {
                     if (mobile.getText().toString().trim().length() == 10) {
 
                         Snackbar.make(v, "Request Submitted", Snackbar.LENGTH_LONG)
