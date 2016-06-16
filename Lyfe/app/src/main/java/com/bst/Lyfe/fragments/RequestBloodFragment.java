@@ -1,8 +1,8 @@
 package com.bst.Lyfe.fragments;
 
+
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class RequestBloodFragment extends Fragment {
+public class RequestBloodFragment extends android.support.v4.app.Fragment {
     Spinner bloodGroup;
     List<String> bloodgroups;
     MainActivity mainActivity;
@@ -31,10 +31,7 @@ public class RequestBloodFragment extends Fragment {
         // Required empty public constructor
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +55,7 @@ public class RequestBloodFragment extends Fragment {
         bloodgroups.add("AB-");
         bloodgroups.add("O+");
         bloodgroups.add("O-");
-        ArrayAdapter<String> bloodgroupsAdapter = new ArrayAdapter<String>(mainActivity, R.layout.spinner_layout, bloodgroups);
+        ArrayAdapter<String> bloodgroupsAdapter = new ArrayAdapter<String>(mainActivity, R.layout.spinner_layout_request, bloodgroups);
         bloodgroupsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bloodGroup.setAdapter(bloodgroupsAdapter);
         bloodGroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
