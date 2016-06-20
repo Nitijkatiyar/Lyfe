@@ -21,4 +21,6 @@
     <color name="textColor">#a10000</color>
     <color name="iconColor">#a10000</color>
 
+    <color name="selectedTabColor">#ff3938</color>
+
 </resources>
