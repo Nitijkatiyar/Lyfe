@@ -33,6 +33,9 @@
             android:name=".activities.SignInActivity"
             android:screenOrientation="portrait"></activity>
         <activity
+            android:name=".activities.ActivityBloodFacts"
+            android:screenOrientation="portrait"></activity>
+        <activity
             android:name=".activities.OverviewActivity"
             android:screenOrientation="portrait">
             <intent-filter>
