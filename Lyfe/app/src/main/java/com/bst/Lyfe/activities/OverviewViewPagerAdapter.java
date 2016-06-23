@@ -71,7 +71,7 @@ public class OverviewViewPagerAdapter extends PagerAdapter {
 
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View itemView = inflater.inflate(R.layout.overview_viewpager_item, container,
+        View itemView = inflater.inflate(R.layout.listitem_overview_viewpager, container,
                 false);
 
         txttop = (TextView) itemView.findViewById(R.id.textTop);
