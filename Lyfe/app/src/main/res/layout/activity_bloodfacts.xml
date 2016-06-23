@@ -2,16 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="@color/light_grey"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="Blood Facts"
+        android:textSize="20sp"
+        android:paddingLeft="20dp"
+        android:textColor="@color/colorWhite"
+        android:gravity="left|center_vertical"
+        />
+
+    
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:overScrollMode="never"
         android:smoothScrollbar="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@null"></android.support.v7.widget.RecyclerView>
 
 

@@ -182,7 +182,8 @@
         android:layout_height="50dp"
         android:background="@mipmap/semitransparent_black"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="0dp"
