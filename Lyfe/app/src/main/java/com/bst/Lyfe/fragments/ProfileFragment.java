@@ -1,7 +1,9 @@
 package com.bst.Lyfe.fragments;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,7 +11,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bst.Lyfe.R;
+import com.bst.Lyfe.activities.MainActivity;
 import com.commit451.nativestackblur.NativeStackBlur;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
@@ -32,6 +37,8 @@ import static android.app.Activity.RESULT_OK;
 
 public class ProfileFragment extends Fragment {
 
+    private static final int MY_REQUEST_CODE =1 ;
+    MainActivity mainActivity;
     public ProfileFragment() {
     }
 
@@ -49,7 +56,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        mainActivity= (MainActivity) getActivity();
         view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         _profileImage = (CircularImageView) view.findViewById(R.id.profile_image);
@@ -74,13 +81,21 @@ public class ProfileFragment extends Fragment {
     private void selectImage() {
 
         final CharSequence[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
-
+        int permissionCheck = ContextCompat.checkSelfPermission(mainActivity,
+                Manifest.permission.CAMERA);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(mainActivity,
+                    new String[]{Manifest.permission.CAMERA},
+                    MY_REQUEST_CODE);
+        }
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Add Photo!");
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {
                 if (options[item].equals("Take Photo")) {
+
+
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     File f = new File(android.os.Environment.getExternalStorageDirectory(), "temp.jpg");
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));

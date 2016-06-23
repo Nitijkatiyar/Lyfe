@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class ActivityBloodFacts extends AppCompatActivity {
 
-    String[] values = new String[]{"Blood is the life-maintaining fluid that circulates through the body's" +
+    String[] values = new String[]{"Blood is the life-maintaining fluid that circulates through the body's" +" "+
             "heart, arteries, veins and capillaries.", "Blood carries to the body nourishment, electrolytes, hormones," +
             "vitamins, antibodies, heat, and oxygen.", "Blood carries away from the body waste matter and carbon dioxide.",
             "Blood fights against infection and helps heal wounds, keeping you healthy.",

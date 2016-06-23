@@ -41,7 +41,7 @@ public class BloodFactsAdapter extends RecyclerView.Adapter<BloodFactsAdapter.Bl
     public void onBindViewHolder(BloodFactsAdapter.BloodFactViewHolder holder, int position) {
 
 
-            holder._blooddot.setText("•");
+           // holder._blooddot.setText("•");
             holder._bloodText.setText(""+data.get(position));
 
     }
@@ -59,7 +59,7 @@ public class BloodFactsAdapter extends RecyclerView.Adapter<BloodFactsAdapter.Bl
         public BloodFactViewHolder(View views) {
             super(views);
             view = views;
-             _blooddot = (TextView) view.findViewById(R.id.bloodDots);
+            // _blooddot = (TextView) view.findViewById(R.id.bloodDots);
             _bloodText = (TextView) view.findViewById(R.id.bloodText);
 
 
