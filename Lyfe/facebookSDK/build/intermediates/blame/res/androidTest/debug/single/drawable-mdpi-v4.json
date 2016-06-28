@@ -8,12 +8,12 @@
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_topnub.png"
     },
     {
-        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\com_facebook_tooltip_black_background.9.png",
-        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_background.9.png"
-    },
-    {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\com_facebook_picker_magnifier.png",
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_picker_magnifier.png"
+    },
+    {
+        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\com_facebook_tooltip_black_background.9.png",
+        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_background.9.png"
     },
     {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\com_facebook_button_blue_normal.9.png",
