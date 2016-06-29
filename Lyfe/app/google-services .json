@@ -1,19 +1,19 @@
 {
   "project_info": {
-    "project_number": "223473183419",
-    "project_id": "lyfe-1356"
+    "project_number": "318524940947",
+    "project_id": "lyfe-1357"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:223473183419:android:eab3ad18ee70bf0a",
+        "mobilesdk_app_id": "1:318524940947:android:eab3ad18ee70bf0a",
         "android_client_info": {
           "package_name": "com.bst.Lyfe"
         }
       },
       "oauth_client": [
         {
-          "client_id": "223473183419-u2014rgif2rf5uf0jfhnunba67oape6v.apps.googleusercontent.com",
+          "client_id": "318524940947-379ddgi756scge64b00qvquk13rtksj3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.bst.Lyfe",
@@ -21,13 +21,13 @@
           }
         },
         {
-          "client_id": "223473183419-k6ac8aua2n739q7kverjuudmdj9eibg8.apps.googleusercontent.com",
+          "client_id": "318524940947-5f1qlos37ncj4mfmrt2576aq45k0ec08.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA3-K0spIP26CrA_7r0WD4WYe8MO4WwfI4"
+          "current_key": "AIzaSyA9w7c_uvJsxo8Gh4UtnCLNwmpnmUEQeO0"
         }
       ],
       "services": {
