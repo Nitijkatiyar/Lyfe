@@ -12,4 +12,97 @@
     <string name="mobile">Mobile Number</string>
     <string name="name">Name</string>
     <string name="hint_email">Email</string>
+
+    <string name="myths">Myths: <font fgcolor="#000000"></font></string>
+    <string name="facts">Facts: <font fgcolor="#ffff0000"></font></string>
+
+    <string-array name="eligibilty">
+        <item>You must have eaten some food during the four hours prior to donation.</item>
+        <item>New donors are accepted from their 16th birthday up to their 66th birthday.</item>
+        <item>Existing/Regular donors are accepted up to their 71st birthday.</item>
+        <item>Regular donors from 71st to their 76th birthday may be accepted subject to authorisation by a  Medical Officer.</item>
+        <item>Weigh at least 50kg.</item>
+        <item>First time donors who are under 25 years of age must.</item>
+        <item>You must be in good health at the time you donate.</item>
+        <item>You cannot donate if you have a cold, flu, sore throat, cold sore, stomach bug or any other infection.</item>
+        <item>If you have visited the dentist for a minor procedure you must wait 24 hours before donating; for major work wait a month.</item>
+    </string-array>
+
+
+    <string-array name="detail_eligibilty">
+        <item>After minor injuries we ask donors to wait one month from recovery.</item>
+        <item>If you received a blood transfusion it will be necessary to wait 12 months.</item>
+        <item>If  your injuries did not require medical attention (minor cuts, scratches and grazes) we ask donors to wait one week from recovery.</item>
+        <item>If you have active or infected acne it will be necessary to wait until it has settled or been treated effectively.</item>
+        <item>If you are being treated with antibiotics you will need to wait one week from completing treatment.</item>
+        <item>If you have injected drugs that were not prescribed by a doctor you cannot give blood now or at any time in the future.</item>
+        <item>Any person who is under the influence of drugs or alcohol cannot donate blood.</item>
+        <item>If you have any other question concerning drugs, please call your local Donor Centre.</item>
+        <item>As long as you do not have a cancer and meet the criteria for blood pressure and pulse rate, you can donate.</item>
+    </string-array>
+
+
+    <string-array name="why_should_donate_blood">
+        <item>Safe blood saves lives and improves health. Blood transfusion is needed.</item>
+        <item>It is also needed for regular transfusions for people with conditions such as thalassaemia and sickle cell disease and is used to make products such as clotting factors for people with haemophilia.</item>
+        <item>There is a constant need for regular blood supply because blood can be stored for only a limited time before use. Regular blood donations by a sufficient number of healthy people are needed to ensure that safe blood will be available whenever and wherever it is needed.</item>
+        <item>Blood is the most precious gift that anyone can give to another person — the gift of life. A decision to donate your blood can save a life, or even several if your blood is separated into its components —red cells, platelets and plasma —which can be used individually for patients with specific conditions.</item>
+        <item>Regular blood donors ensure that a safe and plentiful supply of blood is available whenever and wherever it is needed.</item>
+
+    </string-array>
+
+
+    <string-array name="donationprocess">
+        <item>When you donate blood,Blood Service staff will ask you questions to check that giving blood will be safe for you, and safe for the person receiving your blood.</item>
+        <item>If giving blood may be unsafe for either of these reasons, you may be deferred (e.g. not allowed to donate), either temporarily or permanently.</item>
+        <item>To ensure the safety of blood supplied, it is important that the donor is in a good health. This ensures the donor is protected against damage to his/her own health and that the recipient is protected against the transmission of disease, drugs or contaminated products that could be detrimental to the recipient.</item>
+        <item>On arrival to make a blood donation you will be asked to fill out a Donor Health Questionnaire called a Donor Session Record Form which must be completed before you can give blood. As with all health and personal information provided to blood camp and hospital,all details supplied are strictly confidential.</item>
+        <item>Within a few weeks of donating, you\'ll receive a blood donor card. This card is important as it provides a personal donor identification number that will help to identify you when you come back to donate.If you lose your Blood Donor Card, please let us know next time you come to give blood.</item>
+    </string-array>
+
+
+    <string-array name="different_type_blood_donation">
+        <item>Allogeneic donation (whole blood donation)</item>
+        <item>Apheresis (plasma or platelet donation)</item>
+        <item>Autologous donations (self-directed blood donations)</item>
+        <item>Directed donations (blood donated by friends and family)</item>
+
+    </string-array>
+
+
+    <string-array name="blood_groups">
+        <item>Blood groups are complex chemical systems found on the surface of blood cells. The two main blood group systems in transfusion practice are the ABO system and the Rh(D) type. Identification of the correct blood group is important to prevent reaction following transfusion.</item>
+        <item>Within the ABO system, people can be one of four groups - O, A, B or AB, while in the Rh(D) system they can be either Rh(D) positive or Rh(D) negative. Each system is inherited independently of the other. As a result, there are eight main blood groups.</item>
+        <item>Group A – has only the A antigen on red cells (and B antibody in the plasma)</item>
+        <item>Group B – has only the B antigen on red cells (and A antibody in the plasma)</item>
+        <item>Group AB – has both A and B antigens on red cells (but neither A nor B antibody in the plasma)</item>
+        <item>Group O – has neither A nor B antigens on red cells (but both A and B antibody are in the plasma)</item>
+        <item>A1 Negative (A1 −ve),A1 Positive (A1 +ve),A1B Negative (A1B −ve),A1B Positive (A1B +ve),A2 Negative (A2 −ve),A2 Positive (A2 +ve),A2B Negative (A2B −ve),A2B Positive (A2B +ve),B Negative (B −ve),B Positive (B +ve),B1 Positive (B1 +ve),O Negative (O −ve),O Positive (O+ve)</item>
+
+    </string-array>
+
+    <string-array name="inheritance_bloodgroups">
+        <item>Blood groups are inherited from our biological parents in the same way as eye colour and other genetic traits.</item>
+        <item>Within the ABO Blood Group system, the A and B genes are co-dominant, i.e. these will be expressed whenever the gene is present. The O gene is silent and only expressed when neither A nor B is present.</item>
+        <item>The Rh(D) group is also dominant and will be expressed if inherited from either parent. If the Rh(D) gene is not inherited from either biological parent then the individual will be Rh(D) negative.</item>
+
+    </string-array>
+
+    <string-array name="bloodcomponents">
+        <item>Blood may be transfused as Whole Blood or as one of its components.</item>
+        <item>Whole Blood contains red blood cells, white blood cells and platelets suspended in a proteinaceous fluid called plasma.</item>
+        <item>The treatment, referred to as "blood component therapy", allows several patients to benefit from one unit of donated Whole Blood. Up to four components may be derived from one unit of blood.</item>
+        <item>Whole Blood is a living tissue that circulates through the heart, arteries, veins and capillaries carrying nourishment, electrolytes, hormones, vitamins, antibodies, heat and oxygen to the body\'s tissues.</item>
+
+    </string-array>
+
+
+    <string-array name="day_blood_donor">
+        <item>Every year on 14 June, countries around the world celebrate World Blood Donor Day (WBDD). The event, established in 2004</item>
+        <item>Serves to raise awareness of the need for safe blood and blood products, and to thank blood donors for their voluntary, life-saving gifts of blood.</item>
+        <item>Transfusion of blood and blood products helps save millions of lives every year. It can help patients suffering from life-threatening conditions live longer and with higher quality of life, and supports complex medical and surgical procedures.</item>
+        <item>In many countries, there is not an adequate supply of safe blood, and blood services face the challenge of making sufficient blood available, while also ensuring its quality and safety.</item>
+
+    </string-array>
+
 </resources>

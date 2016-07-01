@@ -11,9 +11,11 @@
         android:background="@color/colorPrimary"
         android:text="Blood Facts"
         android:textSize="20sp"
+        android:singleLine="true"
         android:paddingLeft="20dp"
         android:textColor="@color/colorWhite"
         android:gravity="left|center_vertical"
+        android:id="@+id/headertext"
         />
 
     

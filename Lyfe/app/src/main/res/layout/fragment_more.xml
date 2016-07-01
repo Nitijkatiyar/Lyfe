@@ -38,7 +38,8 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id="@+id/donateblood">
 
                     <ImageView
                         android:id="@+id/image1MoreOption1"
@@ -49,6 +50,7 @@
                         android:src="@mipmap/edit_profile" />
 
                     <TextView
+
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
@@ -174,7 +176,8 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id="@+id/myths">
 
                     <ImageView
                         android:id="@+id/image1MoreOption4"
@@ -192,7 +195,8 @@
                         android:layout_toLeftOf="@+id/image2MoreOption4"
                         android:layout_toRightOf="@+id/image1MoreOption4"
                         android:gravity="center_vertical"
-                        android:text="About Us"
+                        android:singleLine="true"
+                        android:text="Myths vs Facts about blood donation"
                         android:textColor="@color/colorTextBlack"
                         android:textSize="18sp" />
 
