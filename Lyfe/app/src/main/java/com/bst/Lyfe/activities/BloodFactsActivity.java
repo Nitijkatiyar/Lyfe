@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by arun on 22-06-2016.
  */
-public class ActivityBloodFacts extends AppCompatActivity {
+public class BloodFactsActivity extends AppCompatActivity {
 
     String[] values = new String[]{"Blood is the life-maintaining fluid that circulates through the body's" +" "+
             "heart, arteries, veins and capillaries.", "Blood carries to the body nourishment, electrolytes, hormones," +
@@ -39,7 +39,7 @@ public class ActivityBloodFacts extends AppCompatActivity {
         recyclerview = (RecyclerView) findViewById(R.id.recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerview.setLayoutManager(layoutManager);
-        recyclerview.setBackgroundColor(getResources().getColor(R.color.colorTextLightBlack));
+        recyclerview.setBackgroundColor(getResources().getColor(R.color.colorTextSecondry));
         BloodFactsAdapter arrayAdapter = new BloodFactsAdapter(this, stringList);
         recyclerview.setAdapter(arrayAdapter);
 

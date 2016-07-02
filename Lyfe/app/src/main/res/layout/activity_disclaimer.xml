@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgraybackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="20dp"
+        android:text="Disclaimer"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:text="The structure of the project allows anyone with an Internet connection can register as a donor, or make a request.  Please be advised that nothing found here has necessarily been reviewed by any authority with the expertise required to provide you with complete, accurate or reliable information.  That is not to say that you will not find valuable and accurate information in Blood Donors Directory ; much of the time you will. However, Blood Donors Directory cannot guarantee the validity of the information found here.\n\n
+The content of any given information may recently have been changed, vandalized or altered by someone whose opinion does not correspond with the state of knowledge in the relevant fields. Note that most other open-content collaborative databases and reference works also have similar disclaimers. "
+        android:textColor="@color/colorTextSecondry"
+        android:textSize="18sp" />
+
+</LinearLayout>

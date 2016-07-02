@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.SET_DEBUG_APP"/>
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
 
 
     <application
@@ -31,10 +31,13 @@
             android:name=".activities.SignUpPasswordActivity"
             android:screenOrientation="portrait"></activity>
         <activity
+            android:name=".activities.DisclaimerActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
             android:name=".activities.SignInActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".activities.ActivityBloodFacts"
+            android:name=".activities.BloodFactsActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".activities.OverviewActivity"
@@ -46,9 +49,10 @@
             </intent-filter>
         </activity>
         <activity android:name="com.facebook.LoginActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCPw0o6MS9-KDEyEwDJZKn0dyB1cL3hXy4" />
+            android:value="AIzaSyDksi_DO-3cqXx6DF3C5LH7UcHqbzM-oNE" />
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/app_id" />

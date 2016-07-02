@@ -24,7 +24,7 @@ import com.bst.bottombar.OnTabClickListener;
 
 public class MainActivity extends AppCompatActivity {
     private Boolean app_closed = false;
-    private Toolbar toolbar;
+    public Toolbar toolbar;
     BottomBar mBottomBar;
     CoordinatorLayout mainLayout;
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Notifications");
+
 
         mainLayout = (CoordinatorLayout) findViewById(R.id.mainLayout);
 
@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         mBottomBar.useDarkTheme();
 
         mBottomBar.setItems(
-                new BottomBarTab(R.mipmap.notification_selected, "Notifications"),
                 new BottomBarTab(R.mipmap.blood_donate_selected, "Donate"),
                 new BottomBarTab(R.mipmap.blood_request_selected, "Request"),
+                new BottomBarTab(R.mipmap.notification_selected, "Notifications"),
                 new BottomBarTab(R.mipmap.user_profile_selected, "Profile"),
                 new BottomBarTab(R.mipmap.more_selected, "More")
         );
@@ -68,20 +68,20 @@ public class MainActivity extends AppCompatActivity {
 
         mBottomBar.setDefaultTabPosition(0);
 
-        changeFragmentTo(new NotificationFragment());
+        changeFragmentTo(new DonateFragment());
         // Listen for tab changes
         mBottomBar.setOnTabClickListener(new OnTabClickListener() {
             @Override
             public void onTabSelected(int position) {
                 if (position == 0) {
-                    toolbar.setTitle("Notifications");
-                    changeFragmentTo(new NotificationFragment());
-                } else if (position == 1) {
                     toolbar.setTitle("Donate");
                     changeFragmentTo(new DonateFragment());
-                } else if (position == 2) {
+                } else if (position == 1) {
                     toolbar.setTitle("Request");
                     changeFragmentTo(new RequestBloodFragment());
+                } else if (position == 2) {
+                    toolbar.setTitle("Notifications");
+                    changeFragmentTo(new NotificationFragment());
                 } else if (position == 3) {
                     toolbar.setTitle("Profile");
                     changeFragmentTo(new ProfileFragment());

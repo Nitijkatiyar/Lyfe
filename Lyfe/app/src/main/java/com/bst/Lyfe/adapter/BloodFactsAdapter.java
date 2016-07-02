@@ -1,6 +1,5 @@
 package com.bst.Lyfe.adapter;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bst.Lyfe.R;
-import com.bst.Lyfe.activities.ActivityBloodFacts;
+import com.bst.Lyfe.activities.BloodFactsActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,12 +16,12 @@ import java.util.List;
  */
 public class BloodFactsAdapter extends RecyclerView.Adapter<BloodFactsAdapter.BloodFactViewHolder> {
 
-    ActivityBloodFacts activity;
+    BloodFactsActivity activity;
     List<String> data;
     LayoutInflater layoutInflater;
 
 
-    public BloodFactsAdapter(ActivityBloodFacts activityBloodFacts, List<String> values) {
+    public BloodFactsAdapter(BloodFactsActivity activityBloodFacts, List<String> values) {
         activity = activityBloodFacts;
         data = values;
 

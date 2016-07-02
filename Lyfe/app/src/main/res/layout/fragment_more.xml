@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="@color/lightgraybackground"
     android:orientation="vertical">
 
 
@@ -57,7 +57,7 @@
                         android:layout_toRightOf="@+id/image1MoreOption1"
                         android:gravity="center_vertical"
                         android:text="Donate Blood"
-                        android:textColor="@color/colorTextBlack"
+                        android:textColor="@color/colorTextPrimary"
                         android:textSize="18sp" />
 
                     <ImageView
@@ -102,7 +102,7 @@
                         android:layout_toRightOf="@+id/image1MoreOption2"
                         android:gravity="center_vertical"
                         android:text="Stories"
-                        android:textColor="@color/colorTextBlack"
+                        android:textColor="@color/colorTextPrimary"
                         android:textSize="18sp" />
 
                     <ImageView
@@ -148,7 +148,7 @@
                         android:layout_toRightOf="@+id/image1MoreOption3"
                         android:gravity="center_vertical"
                         android:text="Blood Facts"
-                        android:textColor="@color/colorTextBlack"
+                        android:textColor="@color/colorTextPrimary"
                         android:textSize="18sp" />
 
                     <ImageView
@@ -168,6 +168,7 @@
                     android:background="@color/colorViewBackGround" />
 
                 <RelativeLayout
+                    android:id="@+id/disclaimer"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -192,8 +193,8 @@
                         android:layout_toLeftOf="@+id/image2MoreOption4"
                         android:layout_toRightOf="@+id/image1MoreOption4"
                         android:gravity="center_vertical"
-                        android:text="About Us"
-                        android:textColor="@color/colorTextBlack"
+                        android:text="Disclaimer"
+                        android:textColor="@color/colorTextPrimary"
                         android:textSize="18sp" />
 
                     <ImageView
@@ -238,7 +239,7 @@
                         android:layout_toRightOf="@+id/image1MoreOption5"
                         android:gravity="center_vertical"
                         android:text="About Us"
-                        android:textColor="@color/colorTextBlack"
+                        android:textColor="@color/colorTextPrimary"
                         android:textSize="18sp" />
 
                     <ImageView

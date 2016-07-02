@@ -15,126 +15,124 @@
         android:orientation="vertical">
 
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/name"
-                    android:layout_width="350dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:hint="PatientName"
-                    android:paddingLeft="5dp"
-                    android:paddingStart="10dp"
-                    android:background="@mipmap/line1"
-                    android:singleLine="true"
-                    android:textColor="@color/colorTextBlack"
-                    android:textColorHint="@color/colorTextBlack" />
-
-
-
-                <EditText
-                    android:id="@+id/edittextMobileNumber"
-                    android:layout_width="350dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:hint="@string/mobile"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:background="@mipmap/line1"
-                    android:paddingLeft="5dp"
-                    android:paddingStart="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/colorTextBlack"
-                    android:textColorHint="@color/colorTextBlack" />
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:hint="PatientName"
+                android:paddingLeft="5dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorTextSecondry"
+                android:textColorHint="@color/colorTextSecondry"
+                android:textSize="18sp" />
 
 
-                <EditText
-                    android:id="@+id/email"
-                    android:layout_width="350dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:hint="@string/hint_email"
-                    android:paddingLeft="5dp"
-                    android:paddingStart="10dp"
-                    android:singleLine="true"
-                    android:background="@mipmap/line1"
-                    android:textColor="@color/colorTextBlack"
-                    android:textColorHint="@color/colorTextBlack" />
+            <EditText
+                android:id="@+id/edittextMobileNumber"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:hint="@string/mobile"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingLeft="5dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorTextSecondry"
+                android:textColorHint="@color/colorTextSecondry"
+                android:textSize="18sp" />
 
 
-                <EditText
-                    android:id="@+id/blood_unit"
-                    android:layout_width="350dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:hint="BloodUnit"
-                    android:background="@mipmap/line1"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:paddingLeft="5dp"
-                    android:paddingStart="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/colorTextBlack"
-                    android:textColorHint="@color/colorTextBlack" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:hint="@string/hint_email"
+                android:paddingLeft="5dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorTextSecondry"
+                android:textColorHint="@color/colorTextSecondry"
+                android:textSize="18sp" />
 
 
-
-                <EditText
-                    android:id="@+id/location"
-                    android:layout_width="350dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:hint="Location"
-                    android:paddingLeft="5dp"
-                    android:paddingStart="10dp"
-                    android:background="@mipmap/line1"
-                    android:singleLine="true"
-                    android:textColor="@color/colorTextBlack"
-                    android:textColorHint="@color/colorTextBlack" />
-
-
-
-                <Spinner
-                    android:id="@+id/spinnerBloodGroup"
-                    android:layout_width="350dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@mipmap/line1"
-                    android:layout_marginTop="10dp"
-                    android:spinnerMode="dialog"></Spinner>
+            <EditText
+                android:id="@+id/blood_unit"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:hint="Blood Unit (1 unit = 450 ml.)"
+                android:inputType="number"
+                android:maxLength="2"
+                android:paddingLeft="5dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorTextSecondry"
+                android:textColorHint="@color/colorTextSecondry"
+                android:textSize="18sp" />
 
 
+            <EditText
+                android:id="@+id/location"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:hint="City"
+                android:paddingLeft="5dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorTextSecondry"
+                android:textColorHint="@color/colorTextSecondry"
+                android:textSize="18sp" />
 
 
-            </LinearLayout>
+            <Spinner
+                android:id="@+id/spinnerBloodGroup"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/semitransparent_white"
+                android:spinnerMode="dialog"></Spinner>
+
+
+        </LinearLayout>
 
 
         <Button
             android:id="@+id/submit"
-            android:layout_width="340dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:textAlignment="center"
             android:layout_marginLeft="20dp"
-            android:background="@color/progresslightcolor"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
             android:text="@string/action_submit"
             android:textColor="@color/white" />
     </LinearLayout>

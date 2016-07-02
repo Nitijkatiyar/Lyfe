@@ -31,6 +31,7 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -55,6 +56,7 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
     FlawkItProgressBar progressBar;
     int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     Button _submit;
+    LatLng location;
 
 
     @Override
@@ -114,7 +116,7 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
         bloodgroups.add("AB-");
         bloodgroups.add("O+");
         bloodgroups.add("O-");
-        ArrayAdapter<String> bloodgroupsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bloodgroups);
+        ArrayAdapter<String> bloodgroupsAdapter = new ArrayAdapter<String>(this, R.layout.spinner_layout_request, bloodgroups);
         bloodgroupsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bloodGroup.setAdapter(bloodgroupsAdapter);
         bloodGroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -134,7 +136,7 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
         bloodDonationCycle.add("After 1 month");
         bloodDonationCycle.add("After 2 month");
         bloodDonationCycle.add("After 3 month");
-        ArrayAdapter<String> donationcycle = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bloodDonationCycle);
+        ArrayAdapter<String> donationcycle = new ArrayAdapter<String>(this, R.layout.spinner_layout_request, bloodDonationCycle);
         donationcycle.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         _bloodDonationCycle.setAdapter(donationcycle);
         _bloodDonationCycle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -172,7 +174,8 @@ public class SignUpBasicInformationActivity extends AppCompatActivity implements
             if (resultCode == RESULT_OK) {
                 Place place = PlaceAutocomplete.getPlace(this, data);
                 Log.i("Place:", " " + place.getName());
-                _addressCity.setText(place.getAddress());
+                _addressCity.setText(place.getName());
+                location = place.getLatLng();
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
                 Status status = PlaceAutocomplete.getStatus(this, data);
                 Log.i("Place:", " " + status.getStatusMessage());

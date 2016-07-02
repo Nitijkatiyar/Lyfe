@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/image_background"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
 
 
@@ -22,15 +22,16 @@
 
 
             <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="@mipmap/semitransparent_black"
                 android:gravity="center_vertical"
                 android:hint="Personal info."
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorPrimaryDark"
                 android:textColorHint="#999"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
 
             <EditText
                 android:id="@+id/edittextFirstName"
@@ -44,7 +45,7 @@
                 android:hint="First Name"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textColorHint="#999"
                 android:textSize="16sp" />
 
@@ -60,7 +61,7 @@
                 android:hint="Last Name"
                 android:inputType="textCapWords"
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textColorHint="#999"
                 android:textSize="16sp" />
 
@@ -85,7 +86,7 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Male"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@color/colorTextSecondry" />
 
                 <RadioButton
                     android:id="@+id/radioiPhone"
@@ -97,7 +98,7 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Female"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@color/colorTextSecondry" />
 
 
             </RadioGroup>
@@ -114,7 +115,7 @@
                 android:hint="E-mail Id"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textColorHint="#999"
                 android:textSize="16sp" />
 
@@ -130,24 +131,24 @@
                 android:gravity="center_vertical"
                 android:hint="Date of Birth"
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textColorHint="#999"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textviewAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
                 android:gravity="center_vertical"
-                android:hint="Address"
-                android:minHeight="40dp"
+                android:hint="City"
                 android:paddingBottom="5dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="5dp"
+                android:textColor="@color/colorTextSecondry"
                 android:textColorHint="#999"
                 android:textSize="16sp"></TextView>
 
@@ -156,13 +157,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@mipmap/semitransparent_black"
                 android:gravity="center_vertical"
                 android:hint="Blood related info."
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorPrimaryDark"
                 android:textColorHint="#999"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
 
             <Spinner
                 android:id="@+id/spinnerBloodGroup"
@@ -195,7 +196,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/whiteborder_transparent"
                 android:text="Submit"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>

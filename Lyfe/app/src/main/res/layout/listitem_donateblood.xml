@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:layout_height="wrap_content"
+    android:background="@color/lightgraybackground"
     android:orientation="vertical">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="@drawable/card_backgroud_shape"
         android:orientation="horizontal"
         android:padding="10dp">
 
@@ -46,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/name"
                 android:text="Blood Group : A+"
-                android:textColor="@color/colorTextBlack"
+                android:textColor="@color/colorTextPrimary"
                 android:textSize="18sp" />
 
             <TextView
@@ -55,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/requiredbloodgroup"
                 android:text="Contact : 9685967423"
-                android:textColor="@color/colorTextBlack"
+                android:textColor="@color/colorTextPrimary"
                 android:textSize="16sp" />
 
             <TextView
@@ -64,7 +66,7 @@
                 android:layout_below="@+id/contactNumber"
                 android:layout_marginTop="10dp"
                 android:text="24 hours ago"
-                android:textColor="@color/colorTextLightBlack"
+                android:textColor="@color/colorTextSecondry"
                 android:textSize="16sp" />
         </RelativeLayout>
 
@@ -88,9 +90,5 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_margin="5dp"
-        android:background="@color/bb_tabletRightBorderDark" />
+
 </LinearLayout>

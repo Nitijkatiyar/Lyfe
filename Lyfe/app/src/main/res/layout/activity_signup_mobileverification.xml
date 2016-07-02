@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/image_background"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
 
 
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:text="@string/app_name"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textSize="40sp" />
 
 
@@ -64,7 +64,7 @@
                 android:inputType="numberDecimal"
                 android:maxLength="10"
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textColorHint="#999"
                 android:textSize="16sp" />
 
@@ -80,7 +80,7 @@
                 android:inputType="numberPassword"
                 android:maxLength="6"
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textColorHint="#999"
                 android:textSize="16sp" />
 
@@ -92,7 +92,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/whiteborder_transparent"
                 android:text="Validate OTP"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorTextSecondry"
                 android:textSize="16sp" />
 
 
