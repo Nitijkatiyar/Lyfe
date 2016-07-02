@@ -8,10 +8,6 @@
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_section_header.xml"
     },
     {
-        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_login_activity_layout.xml",
-        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_login_activity_layout.xml"
-    },
-    {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_search_box.xml",
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_search_box.xml"
     },
@@ -20,24 +16,84 @@
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_tooltip_bubble.xml"
     },
     {
-        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_title_bar_stub.xml",
-        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar_stub.xml"
-    },
-    {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_placepickerfragment.xml",
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment.xml"
     },
     {
-        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_search_bar_layout.xml",
-        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_search_bar_layout.xml"
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_tooltip_bubble.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_tooltip_bubble.xml"
     },
     {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_usersettingsfragment.xml",
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_usersettingsfragment.xml"
     },
     {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_friendpickerfragment.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_friendpickerfragment.xml"
+    },
+    {
+        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_list_row.xml",
+        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_row.xml"
+    },
+    {
+        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_placepickerfragment_list_row.xml",
+        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment_list_row.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_list_row.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_row.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_list_section_header.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_section_header.xml"
+    },
+    {
+        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_login_activity_layout.xml",
+        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_login_activity_layout.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_search_box.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_search_box.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_title_bar_stub.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar_stub.xml"
+    },
+    {
+        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_title_bar_stub.xml",
+        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar_stub.xml"
+    },
+    {
+        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_search_bar_layout.xml",
+        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_search_bar_layout.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_activity_circle_row.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_activity_circle_row.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_image.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_image.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_placepickerfragment.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_search_bar_layout.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_search_bar_layout.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_login_activity_layout.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_login_activity_layout.xml"
+    },
+    {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_activity_circle_row.xml",
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_activity_circle_row.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_placepickerfragment_list_row.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment_list_row.xml"
     },
     {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_checkbox.xml",
@@ -48,15 +104,19 @@
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar.xml"
     },
     {
-        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_list_row.xml",
-        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_row.xml"
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_usersettingsfragment.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_usersettingsfragment.xml"
     },
     {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_image.xml",
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_image.xml"
     },
     {
-        "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_placepickerfragment_list_row.xml",
-        "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment_list_row.xml"
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_checkbox.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_checkbox.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_title_bar.xml",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar.xml"
     }
 ]

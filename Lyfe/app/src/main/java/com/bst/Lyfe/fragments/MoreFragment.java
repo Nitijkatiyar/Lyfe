@@ -9,14 +9,15 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.bst.Lyfe.R;
+import com.bst.Lyfe.activities.BloodDonateActivity;
 import com.bst.Lyfe.activities.BloodFactsActivity;
-import com.bst.Lyfe.activities.DisclaimerActivity;
 import com.bst.Lyfe.activities.MainActivity;
 import com.bst.utils.ActivityChanger;
 
 
 public class MoreFragment extends Fragment {
-    RelativeLayout _bloodFactsText, _disclaimer;
+
+    RelativeLayout _bloodFactsText, donateblood, myths;
     MainActivity mainActivity;
     ActivityChanger activityChanger;
 
@@ -29,6 +30,16 @@ public class MoreFragment extends Fragment {
         activityChanger = new ActivityChanger(mainActivity);
 
         _bloodFactsText = (RelativeLayout) view.findViewById(R.id.bloodFactsText);
+        donateblood = (RelativeLayout) view.findViewById(R.id.donateblood);
+        myths = (RelativeLayout) view.findViewById(R.id.myths);
+        donateblood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mainActivity, BloodDonateActivity.class);
+                startActivity(intent);
+
+            }
+        });
         _bloodFactsText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,11 +47,16 @@ public class MoreFragment extends Fragment {
             }
         });
 
-        _disclaimer = (RelativeLayout) view.findViewById(R.id.disclaimer);
-        _disclaimer.setOnClickListener(new View.OnClickListener() {
+        myths.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activityChanger.startActivity(new Intent(mainActivity, DisclaimerActivity.class));
+
+
+                Intent intent = new Intent(mainActivity, BloodFactsActivity.class);
+                Bundle mBundle = new Bundle();
+                mBundle.putString("myth", "myth");
+                intent.putExtras(mBundle);
+                startActivity(intent);
             }
         });
         return view;

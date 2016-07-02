@@ -1,6 +1,7 @@
 package com.bst.Lyfe.activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -114,6 +116,9 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         _login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 if (_userName.getText().toString().length() > 0 && _password.getText().toString().length() > 0) {
                     if (_password.getText().toString().trim().length() >= 6) {
                         activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class));
