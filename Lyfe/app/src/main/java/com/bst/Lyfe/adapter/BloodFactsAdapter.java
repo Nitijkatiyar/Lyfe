@@ -1,12 +1,10 @@
 package com.bst.Lyfe.adapter;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bst.Lyfe.R;
@@ -97,14 +95,12 @@ public class BloodFactsAdapter extends RecyclerView.Adapter<BloodFactsAdapter.Bl
 
         TextView _blooddot, _bloodText;
         View view;
-        CardView cardView;
 
         public BloodFactViewHolder(View views) {
             super(views);
             view = views;
             _blooddot = (TextView) view.findViewById(R.id.bloodDots);
             _bloodText = (TextView) view.findViewById(R.id.bloodText);
-
 
 
         }

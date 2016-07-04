@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RelativeLayout tabDonate, tabRequest, tabNotification, tabProfile, tabMore;
     TextView tabTextDonate, tabTextRequest, tabTextNotification, tabTextProfile, tabTextMore;
     ImageView tabImageDonate, tabImageRequest, tabImageNotification, tabImageProfile, tabImageMore;
-    RelativeLayout mainLayout;
+    LinearLayout mainLayout;
     private TabHost mTabHost;
 
     @Override
@@ -35,11 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mainLayout = (RelativeLayout) findViewById(R.id.mainLayout);
-
+        mainLayout = (LinearLayout) findViewById(R.id.mainLayout);
 
         tabDonate = (RelativeLayout) findViewById(R.id.tab1);
         tabRequest = (RelativeLayout) findViewById(R.id.tab2);
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tabProfile.setOnClickListener(this);
         tabMore.setOnClickListener(this);
 
-
+        toolbar.setTitle("Donate");
         tabImageDonate.setImageResource(R.mipmap.blood_donate_selected);
         tabTextDonate.setVisibility(View.VISIBLE);
         changeFragmentTo(new DonateFragment());
@@ -80,22 +79,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.equals(tabDonate)) {
             tabImageDonate.setImageResource(R.mipmap.blood_donate_selected);
             tabTextDonate.setVisibility(View.VISIBLE);
+            toolbar.setTitle("Donate");
             changeFragmentTo(new DonateFragment());
         } else if (v.equals(tabRequest)) {
             tabImageRequest.setImageResource(R.mipmap.blood_request_selected);
             tabTextRequest.setVisibility(View.VISIBLE);
+            toolbar.setTitle("Request");
             changeFragmentTo(new RequestBloodFragment());
         } else if (v.equals(tabNotification)) {
             tabImageNotification.setImageResource(R.mipmap.notification_selected);
             tabTextNotification.setVisibility(View.VISIBLE);
+            toolbar.setTitle("Notification");
             changeFragmentTo(new NotificationFragment());
         } else if (v.equals(tabProfile)) {
             tabImageProfile.setImageResource(R.mipmap.user_profile_selected);
             tabTextProfile.setVisibility(View.VISIBLE);
+            toolbar.setTitle("Profile");
             changeFragmentTo(new ProfileFragment());
         } else if (v.equals(tabMore)) {
             tabImageMore.setImageResource(R.mipmap.more_selected);
             tabTextMore.setVisibility(View.VISIBLE);
+            toolbar.setTitle("More");
             changeFragmentTo(new MoreFragment());
         }
     }
