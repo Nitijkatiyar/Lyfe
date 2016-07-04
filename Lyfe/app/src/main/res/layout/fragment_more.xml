@@ -59,7 +59,7 @@
                         android:layout_toRightOf="@+id/image1MoreOption1"
                         android:gravity="center_vertical"
                         android:text="Donate Blood"
-                        android:textColor="@color/colorTextPrimary"
+                        android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
                     <ImageView
@@ -104,7 +104,7 @@
                         android:layout_toRightOf="@+id/image1MoreOption2"
                         android:gravity="center_vertical"
                         android:text="Stories"
-                        android:textColor="@color/colorTextPrimary"
+                        android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
                     <ImageView
@@ -150,7 +150,7 @@
                         android:layout_toRightOf="@+id/image1MoreOption3"
                         android:gravity="center_vertical"
                         android:text="Blood Facts"
-                        android:textColor="@color/colorTextPrimary"
+                        android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
                     <ImageView
@@ -197,11 +197,57 @@
                         android:gravity="center_vertical"
                         android:singleLine="true"
                         android:text="Myths vs Facts about blood donation"
-                        android:textColor="@color/colorTextPrimary"
+                        android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
                     <ImageView
                         android:id="@+id/image2MoreOption4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/arrow_right" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorViewBackGround" />
+
+                <RelativeLayout
+                    android:id="@+id/disclaimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/image1MoreOption6"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/edit_profile" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toLeftOf="@+id/image2MoreOption6"
+                        android:layout_toRightOf="@+id/image1MoreOption6"
+                        android:gravity="center_vertical"
+                        android:text="Disclaimer"
+                        android:textColor="@color/colorTextSecondry"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/image2MoreOption6"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_alignParentRight="true"
@@ -242,7 +288,7 @@
                         android:layout_toRightOf="@+id/image1MoreOption5"
                         android:gravity="center_vertical"
                         android:text="About Us"
-                        android:textColor="@color/colorTextPrimary"
+                        android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
                     <ImageView
