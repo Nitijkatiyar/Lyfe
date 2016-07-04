@@ -24,12 +24,12 @@
         "source": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_loginbutton_silver.xml"
     },
     {
-        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\com_facebook_button_blue_normal.9.png",
-        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_blue_normal.9.png"
-    },
-    {
         "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\com_facebook_usersettingsfragment_background_gradient.xml",
         "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_usersettingsfragment_background_gradient.xml"
+    },
+    {
+        "merged": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\com_facebook_button_blue_normal.9.png",
+        "source": "D:\\DEVELOPMENT\\PERSONAL\\Studios\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_facebook_button_blue_normal.9.png"
     },
     {
         "merged": "E:\\GITLYFE\\Lyfe\\Lyfe\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\com_facebook_picker_list_pressed.9.png",
