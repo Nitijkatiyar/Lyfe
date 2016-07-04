@@ -30,9 +30,8 @@
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
                 android:hint="PatientName"
+                android:maxLines="1"
                 android:paddingLeft="5dp"
-                android:paddingStart="10dp"
-                android:singleLine="true"
                 android:textColor="@color/colorTextSecondry"
                 android:textColorHint="@color/colorTextSecondry"
                 android:textSize="18sp" />
@@ -49,9 +48,8 @@
                 android:hint="@string/mobile"
                 android:inputType="number"
                 android:maxLength="10"
+                android:maxLines="1"
                 android:paddingLeft="5dp"
-                android:paddingStart="10dp"
-                android:singleLine="true"
                 android:textColor="@color/colorTextSecondry"
                 android:textColorHint="@color/colorTextSecondry"
                 android:textSize="18sp" />
@@ -66,31 +64,22 @@
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
                 android:hint="@string/hint_email"
+                android:maxLines="1"
                 android:paddingLeft="5dp"
-                android:paddingStart="10dp"
-                android:singleLine="true"
                 android:textColor="@color/colorTextSecondry"
                 android:textColorHint="@color/colorTextSecondry"
                 android:textSize="18sp" />
 
 
-            <EditText
-                android:id="@+id/blood_unit"
+            <Spinner
+                android:id="@+id/spinnerBloodUnits"
                 android:layout_width="350dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
-                android:hint="Blood Unit (1 unit = 450 ml.)"
-                android:inputType="number"
-                android:maxLength="2"
-                android:paddingLeft="5dp"
-                android:paddingStart="10dp"
-                android:singleLine="true"
-                android:textColor="@color/colorTextSecondry"
-                android:textColorHint="@color/colorTextSecondry"
-                android:textSize="18sp" />
+                android:spinnerMode="dialog"></Spinner>
 
 
             <EditText
@@ -102,9 +91,8 @@
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
                 android:hint="City"
+                android:maxLines="1"
                 android:paddingLeft="5dp"
-                android:paddingStart="10dp"
-                android:singleLine="true"
                 android:textColor="@color/colorTextSecondry"
                 android:textColorHint="@color/colorTextSecondry"
                 android:textSize="18sp" />
@@ -129,7 +117,6 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:background="@color/colorPrimary"
             android:gravity="center"

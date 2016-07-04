@@ -24,7 +24,7 @@ public class DonateFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_donateblood, container, false);
         activity = (MainActivity) getActivity();
-        activity.toolbar.setTitle("Donate");
+//        activity.toolbar.setTitle("Donate");
 
         linearLayout = (LinearLayout) rootView.findViewById(R.id.linearLayout);
 

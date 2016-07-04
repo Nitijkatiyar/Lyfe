@@ -3,13 +3,15 @@ package com.bst.Lyfe.activities;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.bst.Lyfe.R;
@@ -18,15 +20,15 @@ import com.bst.Lyfe.fragments.MoreFragment;
 import com.bst.Lyfe.fragments.NotificationFragment;
 import com.bst.Lyfe.fragments.ProfileFragment;
 import com.bst.Lyfe.fragments.RequestBloodFragment;
-import com.bst.bottombar.BottomBar;
-import com.bst.bottombar.BottomBarTab;
-import com.bst.bottombar.OnTabClickListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Boolean app_closed = false;
     public Toolbar toolbar;
-    BottomBar mBottomBar;
-    CoordinatorLayout mainLayout;
+    RelativeLayout tabDonate, tabRequest, tabNotification, tabProfile, tabMore;
+    TextView tabTextDonate, tabTextRequest, tabTextNotification, tabTextProfile, tabTextMore;
+    ImageView tabImageDonate, tabImageRequest, tabImageNotification, tabImageProfile, tabImageMore;
+    RelativeLayout mainLayout;
+    private TabHost mTabHost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,67 +38,81 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mainLayout = (RelativeLayout) findViewById(R.id.mainLayout);
 
 
-        mainLayout = (CoordinatorLayout) findViewById(R.id.mainLayout);
+        tabDonate = (RelativeLayout) findViewById(R.id.tab1);
+        tabRequest = (RelativeLayout) findViewById(R.id.tab2);
+        tabNotification = (RelativeLayout) findViewById(R.id.tab3);
+        tabProfile = (RelativeLayout) findViewById(R.id.tab4);
+        tabMore = (RelativeLayout) findViewById(R.id.tab5);
 
-        mBottomBar = BottomBar.attach(this, savedInstanceState);
-        // Disable the left bar on tablets and behave exactly the same on mobile and tablets instead.
-        mBottomBar.noTabletGoodness();
+        tabTextDonate = (TextView) findViewById(R.id.tabtext1);
+        tabTextRequest = (TextView) findViewById(R.id.tabtext2);
+        tabTextNotification = (TextView) findViewById(R.id.tabtext3);
+        tabTextProfile = (TextView) findViewById(R.id.tabtext4);
+        tabTextMore = (TextView) findViewById(R.id.tabtext5);
 
-        // Show all titles even when there's more than three tabs.
-//        mBottomBar.useFixedMode();
-
-        // Use the dark theme.
-        mBottomBar.useDarkTheme();
-
-        mBottomBar.setItems(
-                new BottomBarTab(R.mipmap.blood_donate_selected, "Donate"),
-                new BottomBarTab(R.mipmap.blood_request_selected, "Request"),
-                new BottomBarTab(R.mipmap.notification_selected, "Notifications"),
-                new BottomBarTab(R.mipmap.user_profile_selected, "Profile"),
-                new BottomBarTab(R.mipmap.more_selected, "More")
-        );
+        tabImageDonate = (ImageView) findViewById(R.id.tabimage1);
+        tabImageRequest = (ImageView) findViewById(R.id.tabimage2);
+        tabImageNotification = (ImageView) findViewById(R.id.tabimage3);
+        tabImageProfile = (ImageView) findViewById(R.id.tabimage4);
+        tabImageMore = (ImageView) findViewById(R.id.tabimage5);
 
 
-        mBottomBar.mapColorForTab(0, ContextCompat.getColor(this, R.color.colorWhite));
-        mBottomBar.mapColorForTab(1, ContextCompat.getColor(this, R.color.colorWhite));
-        mBottomBar.mapColorForTab(2, ContextCompat.getColor(this, R.color.colorWhite));
-        mBottomBar.mapColorForTab(3, ContextCompat.getColor(this, R.color.colorWhite));
+        tabDonate.setOnClickListener(this);
+        tabRequest.setOnClickListener(this);
+        tabNotification.setOnClickListener(this);
+        tabProfile.setOnClickListener(this);
+        tabMore.setOnClickListener(this);
 
-//        mBottomBar.setActiveTabColor(ContextCompat.getColor(this, R.color.colorWhite));
 
-        mBottomBar.setDefaultTabPosition(0);
-
+        tabImageDonate.setImageResource(R.mipmap.blood_donate_selected);
+        tabTextDonate.setVisibility(View.VISIBLE);
         changeFragmentTo(new DonateFragment());
-        // Listen for tab changes
-        mBottomBar.setOnTabClickListener(new OnTabClickListener() {
-            @Override
-            public void onTabSelected(int position) {
-                if (position == 0) {
-                    toolbar.setTitle("Donate");
-                    changeFragmentTo(new DonateFragment());
-                } else if (position == 1) {
-                    toolbar.setTitle("Request");
-                    changeFragmentTo(new RequestBloodFragment());
-                } else if (position == 2) {
-                    toolbar.setTitle("Notifications");
-                    changeFragmentTo(new NotificationFragment());
-                } else if (position == 3) {
-                    toolbar.setTitle("Profile");
-                    changeFragmentTo(new ProfileFragment());
-                } else if (position == 4) {
-                    toolbar.setTitle("More");
-                    changeFragmentTo(new MoreFragment());
-                }
-            }
 
-            @Override
-            public void onTabReSelected(int position) {
-                // The user reselected a tab at the specified position!
-            }
-        });
+
     }
+
+    @Override
+    public void onClick(View v) {
+        resetTabs();
+        if (v.equals(tabDonate)) {
+            tabImageDonate.setImageResource(R.mipmap.blood_donate_selected);
+            tabTextDonate.setVisibility(View.VISIBLE);
+            changeFragmentTo(new DonateFragment());
+        } else if (v.equals(tabRequest)) {
+            tabImageRequest.setImageResource(R.mipmap.blood_request_selected);
+            tabTextRequest.setVisibility(View.VISIBLE);
+            changeFragmentTo(new RequestBloodFragment());
+        } else if (v.equals(tabNotification)) {
+            tabImageNotification.setImageResource(R.mipmap.notification_selected);
+            tabTextNotification.setVisibility(View.VISIBLE);
+            changeFragmentTo(new NotificationFragment());
+        } else if (v.equals(tabProfile)) {
+            tabImageProfile.setImageResource(R.mipmap.user_profile_selected);
+            tabTextProfile.setVisibility(View.VISIBLE);
+            changeFragmentTo(new ProfileFragment());
+        } else if (v.equals(tabMore)) {
+            tabImageMore.setImageResource(R.mipmap.more_selected);
+            tabTextMore.setVisibility(View.VISIBLE);
+            changeFragmentTo(new MoreFragment());
+        }
+    }
+
+    private void resetTabs() {
+        tabImageDonate.setImageResource(R.mipmap.blood_donate_default);
+        tabImageRequest.setImageResource(R.mipmap.blood_request_default);
+        tabImageNotification.setImageResource(R.mipmap.notification_default);
+        tabImageProfile.setImageResource(R.mipmap.user_profile_default);
+        tabImageMore.setImageResource(R.mipmap.more_default);
+        tabTextDonate.setVisibility(View.GONE);
+        tabTextRequest.setVisibility(View.GONE);
+        tabTextNotification.setVisibility(View.GONE);
+        tabTextProfile.setVisibility(View.GONE);
+        tabTextMore.setVisibility(View.GONE);
+    }
+
 
     public void changeFragmentTo(Fragment fragment) {
 
