@@ -23,7 +23,7 @@ public class NotificationFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_notification, container, false);
         activity = (MainActivity) getActivity();
-        activity.toolbar.setTitle("Donate");
+
 
         linearLayout = (LinearLayout) rootView.findViewById(R.id.linearLayout);
 
