@@ -69,7 +69,6 @@ public class BloodFactsAdapter extends RecyclerView.Adapter<BloodFactsAdapter.Bl
         if (flag == true) {
 
             holder._blooddot.setVisibility(View.VISIBLE);
-            holder.cardView.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
             String myths = activity.getResources().getString(R.string.myths);
             String facts = activity.getResources().getString(R.string.facts);
             holder._blooddot.setText(Html.fromHtml(myths) + datamyth.get(position));
@@ -105,7 +104,7 @@ public class BloodFactsAdapter extends RecyclerView.Adapter<BloodFactsAdapter.Bl
             view = views;
             _blooddot = (TextView) view.findViewById(R.id.bloodDots);
             _bloodText = (TextView) view.findViewById(R.id.bloodText);
-            cardView = (CardView) view.findViewById(R.id.card_view);
+
 
 
         }

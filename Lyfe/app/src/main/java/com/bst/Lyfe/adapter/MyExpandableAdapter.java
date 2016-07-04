@@ -115,7 +115,6 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
                                 break;
                             case 2:
                                 intent = new Intent(activity, ActivityBloodDonateInfo.class);
-
                                 intent.putExtra("bloodcomponents", "bloodcomponents");
                                 activity.startActivity(intent);
                                 break;
@@ -144,20 +143,7 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
             convertViews = inflater.inflate(R.layout.group, null);
         }
 
-
-
-//        convertViews.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if(groupPosition==2){
-//                    Log.e("hi","hi");
-//                   Intent  intent = new Intent(activity, ActivityBloodDonateInfo.class);
-//                    intent.putExtra("day_blood_donor", "day_blood_donor");
-//                    activity.startActivity(intent);
-//                }
-//            }
-//        });
-
+        
         ((CheckedTextView) convertViews.findViewById(R.id.textView1)).setText(parentItems.get(groupPosition));
 
         ((CheckedTextView) convertViews.findViewById(R.id.textView1)).setChecked(true);
