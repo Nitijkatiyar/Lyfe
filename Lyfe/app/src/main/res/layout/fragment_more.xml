@@ -299,6 +299,52 @@
                         android:layout_centerVertical="true"
                         android:src="@mipmap/arrow_right" />
                 </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorViewBackGround" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:id="@+id/settings">
+
+                    <ImageView
+                        android:id="@+id/image1MoreOption7"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/edit_profile" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toLeftOf="@+id/image2MoreOption7"
+                        android:layout_toRightOf="@+id/image1MoreOption7"
+                        android:gravity="center_vertical"
+                        android:text="Settings"
+                        android:textColor="@color/colorTextSecondry"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/image2MoreOption7"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/arrow_right" />
+                </RelativeLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

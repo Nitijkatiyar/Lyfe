@@ -13,12 +13,13 @@ import com.bst.Lyfe.activities.BloodDonateActivity;
 import com.bst.Lyfe.activities.BloodFactsActivity;
 import com.bst.Lyfe.activities.DisclaimerActivity;
 import com.bst.Lyfe.activities.MainActivity;
+import com.bst.Lyfe.activities.SettingActivity;
 import com.bst.utils.ActivityChanger;
 
 
 public class MoreFragment extends Fragment {
 
-    RelativeLayout _bloodFactsText, donateblood, myths, disclaimer;
+    RelativeLayout _bloodFactsText, donateblood, myths, disclaimer,settings;
     MainActivity mainActivity;
     ActivityChanger activityChanger;
 
@@ -31,6 +32,7 @@ public class MoreFragment extends Fragment {
         activityChanger = new ActivityChanger(mainActivity);
 
         _bloodFactsText = (RelativeLayout) view.findViewById(R.id.bloodFactsText);
+        settings = (RelativeLayout) view.findViewById(R.id.settings);
         donateblood = (RelativeLayout) view.findViewById(R.id.donateblood);
         disclaimer = (RelativeLayout) view.findViewById(R.id.disclaimer);
 
@@ -62,6 +64,13 @@ public class MoreFragment extends Fragment {
                 mBundle.putString("myth", "myth");
                 intent.putExtras(mBundle);
                 activityChanger.startActivity(intent);
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityChanger.startActivity(new Intent(mainActivity, SettingActivity.class));
             }
         });
         return view;
