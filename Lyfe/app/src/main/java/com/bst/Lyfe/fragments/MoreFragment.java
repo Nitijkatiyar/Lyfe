@@ -11,14 +11,14 @@ import android.widget.RelativeLayout;
 import com.bst.Lyfe.R;
 import com.bst.Lyfe.activities.BloodDonateActivity;
 import com.bst.Lyfe.activities.BloodFactsActivity;
+import com.bst.Lyfe.activities.DisclaimerActivity;
 import com.bst.Lyfe.activities.MainActivity;
-import com.bst.Lyfe.activities.SettingActivity;
 import com.bst.utils.ActivityChanger;
 
 
 public class MoreFragment extends Fragment {
 
-    RelativeLayout _bloodFactsText, donateblood, myths,settings;
+    RelativeLayout _bloodFactsText, donateblood, myths, disclaimer;
     MainActivity mainActivity;
     ActivityChanger activityChanger;
 
@@ -32,14 +32,13 @@ public class MoreFragment extends Fragment {
 
         _bloodFactsText = (RelativeLayout) view.findViewById(R.id.bloodFactsText);
         donateblood = (RelativeLayout) view.findViewById(R.id.donateblood);
+        disclaimer = (RelativeLayout) view.findViewById(R.id.disclaimer);
+
         myths = (RelativeLayout) view.findViewById(R.id.myths);
-        //settings=(RelativeLayout) view.findViewById(R.id.settings);
         donateblood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 activityChanger.startActivity(new Intent(mainActivity, BloodDonateActivity.class));
-
-
             }
         });
         _bloodFactsText.setOnClickListener(new View.OnClickListener() {
@@ -48,21 +47,21 @@ public class MoreFragment extends Fragment {
                 activityChanger.startActivity(new Intent(mainActivity, BloodFactsActivity.class));
             }
         });
+        disclaimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityChanger.startActivity(new Intent(mainActivity, DisclaimerActivity.class));
+            }
+        });
 
         myths.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(mainActivity, BloodFactsActivity.class);
                 Bundle mBundle = new Bundle();
                 mBundle.putString("myth", "myth");
-                activityChanger.startActivity(new Intent(mainActivity, BloodFactsActivity.class).putExtras(mBundle));
-
-
-            }
-        });
-        donateblood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                activityChanger.startActivity(new Intent(mainActivity, SettingActivity.class));
+                intent.putExtras(mBundle);
+                activityChanger.startActivity(intent);
             }
         });
         return view;
