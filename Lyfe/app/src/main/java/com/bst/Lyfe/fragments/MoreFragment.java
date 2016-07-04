@@ -12,12 +12,13 @@ import com.bst.Lyfe.R;
 import com.bst.Lyfe.activities.BloodDonateActivity;
 import com.bst.Lyfe.activities.BloodFactsActivity;
 import com.bst.Lyfe.activities.MainActivity;
+import com.bst.Lyfe.activities.SettingActivity;
 import com.bst.utils.ActivityChanger;
 
 
 public class MoreFragment extends Fragment {
 
-    RelativeLayout _bloodFactsText, donateblood, myths;
+    RelativeLayout _bloodFactsText, donateblood, myths,settings;
     MainActivity mainActivity;
     ActivityChanger activityChanger;
 
@@ -32,11 +33,12 @@ public class MoreFragment extends Fragment {
         _bloodFactsText = (RelativeLayout) view.findViewById(R.id.bloodFactsText);
         donateblood = (RelativeLayout) view.findViewById(R.id.donateblood);
         myths = (RelativeLayout) view.findViewById(R.id.myths);
+        //settings=(RelativeLayout) view.findViewById(R.id.settings);
         donateblood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mainActivity, BloodDonateActivity.class);
-                startActivity(intent);
+                activityChanger.startActivity(new Intent(mainActivity, BloodDonateActivity.class));
+
 
             }
         });
@@ -50,13 +52,17 @@ public class MoreFragment extends Fragment {
         myths.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                Intent intent = new Intent(mainActivity, BloodFactsActivity.class);
                 Bundle mBundle = new Bundle();
                 mBundle.putString("myth", "myth");
-                intent.putExtras(mBundle);
-                startActivity(intent);
+                activityChanger.startActivity(new Intent(mainActivity, BloodFactsActivity.class).putExtras(mBundle));
+
+
+            }
+        });
+        donateblood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityChanger.startActivity(new Intent(mainActivity, SettingActivity.class));
             }
         });
         return view;

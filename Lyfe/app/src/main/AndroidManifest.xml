@@ -47,6 +47,12 @@
             android:name=".activities.ActivityBloodDonateInfo"
             android:screenOrientation="portrait"></activity>
         <activity
+            android:name=".activities.SettingActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.MobilePinActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
             android:name=".activities.OverviewActivity"
             android:screenOrientation="portrait">
             <intent-filter>
