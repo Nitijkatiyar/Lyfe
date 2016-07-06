@@ -5,7 +5,15 @@
     android:background="@color/lightgraybackground"
     android:orientation="vertical">
 
-
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:title="About us"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <LinearLayout
         android:id="@+id/profileLayout"
@@ -25,7 +33,6 @@
 
 
                 <RelativeLayout
-                    android:id="@+id/donateblood"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@color/colorWhite"
@@ -40,7 +47,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_vertical"
-                        android:text="Donate Blood"
+                        android:text="Rate us on Play Store"
                         android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
@@ -72,7 +79,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_vertical"
-                        android:text="Stories"
+                        android:text="Like us on Facebook"
                         android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
@@ -91,7 +98,6 @@
                     android:background="@color/colorViewBackGround" />
 
                 <RelativeLayout
-                    android:id="@+id/bloodFactsText"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@color/colorWhite"
@@ -105,7 +111,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_vertical"
-                        android:text="Blood Facts"
+                        android:text="Follow us on Twitter"
                         android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
@@ -124,7 +130,6 @@
                     android:background="@color/colorViewBackGround" />
 
                 <RelativeLayout
-                    android:id="@+id/myths"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@color/colorWhite"
@@ -139,7 +144,7 @@
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_vertical"
                         android:singleLine="true"
-                        android:text="Myths vs Facts about blood donation"
+                        android:text="Share us with Friends"
                         android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 
@@ -157,9 +162,7 @@
                     android:layout_height="1dp"
                     android:background="@color/colorViewBackGround" />
 
-
                 <RelativeLayout
-                    android:id="@+id/aboutus"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@color/colorWhite"
@@ -167,12 +170,45 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_vertical"
-                        android:text="About Us"
+                        android:text="Disclaimer"
+                        android:textColor="@color/colorTextSecondry"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/image2MoreOption6"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/arrow_right" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorViewBackGround" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_vertical"
+                        android:text="Who are we?"
                         android:textColor="@color/colorTextSecondry"
                         android:textSize="18sp" />
 

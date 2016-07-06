@@ -17,8 +17,8 @@
     <string name="termsandcondition"><html>I have read and accept the <span style="color: #7777f3;"><u>Terms &amp; Conditions</u></span></html></string>
 
 
-    <string name="myths">Myths: <font fgcolor="#000000"></font></string>
-    <string name="facts">Facts: <font fgcolor="#ffff0000"></font></string>
+    <string name="myths">Myths:- <font fgcolor="#000000"></font></string>
+    <string name="facts">Facts:- <font fgcolor="#ffff0000"></font></string>
 
     <string-array name="eligibilty">
         <item>You must have eaten some food during the four hours prior to donation.</item>

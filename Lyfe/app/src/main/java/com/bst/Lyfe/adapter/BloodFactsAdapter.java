@@ -69,12 +69,12 @@ public class BloodFactsAdapter extends RecyclerView.Adapter<BloodFactsAdapter.Bl
             holder._blooddot.setVisibility(View.VISIBLE);
             String myths = activity.getResources().getString(R.string.myths);
             String facts = activity.getResources().getString(R.string.facts);
-            holder._blooddot.setText(Html.fromHtml(myths) + datamyth.get(position));
-            holder._bloodText.setText(Html.fromHtml(facts) + datafacts.get(position));
+            holder._blooddot.setText(Html.fromHtml(myths) + " " + datamyth.get(position));
+            holder._bloodText.setText(Html.fromHtml(facts) + " " + datafacts.get(position));
         } else if (a.equalsIgnoreCase("String")) {
             holder._bloodText.setText("" + datablooddonateinfo.get(position));
         } else if (flag == false) {
-            holder._bloodText.setText("" + data.get(position));
+            holder._bloodText.setText("* " + data.get(position));
 
         }
 

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
@@ -26,20 +28,28 @@ public class BloodDonateActivity extends AppCompatActivity {
     private ArrayList<ArrayList<String>> childItems = new ArrayList();
     MyExpandableAdapter adapter;
     FrameLayout frameLayout;
-    TextView textview,textday;
+    TextView textday;
+    public Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.donate_blood_activity);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Donate Blood");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
         expandable_list = (ExpandableListView) findViewById(R.id.expandable_list);
-        textview=(TextView)findViewById(R.id.textview);
-        textview.setText("Donate Blood");
-         textday= (TextView)findViewById(R.id.textday);
+
+        textday = (TextView) findViewById(R.id.textday);
         textday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent  intent = new Intent(BloodDonateActivity.this, ActivityBloodDonateInfo.class);
+                Intent intent = new Intent(BloodDonateActivity.this, ActivityBloodDonateInfo.class);
                 intent.putExtra("day_blood_donor", "day_blood_donor");
                 startActivity(intent);
             }
@@ -53,7 +63,6 @@ public class BloodDonateActivity extends AppCompatActivity {
                 (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE),
                 this);
         expandable_list.setAdapter(adapter);
-
 
 
     }
@@ -93,6 +102,15 @@ public class BloodDonateActivity extends AppCompatActivity {
 //        childItems.add(child);
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }
