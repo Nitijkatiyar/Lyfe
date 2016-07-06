@@ -72,7 +72,7 @@ public class BloodFactsActivity extends AppCompatActivity {
             aBoolean = false;
             arrayAdapter = new BloodFactsAdapter(this, stringList, aBoolean, "saaa");
         } else if (bundle.getString("myth").equals("myth")) {
-            headertext.setText("Myths vs Facts about blood donation");
+            headertext.setText(""+getResources().getString(R.string.myts_vs_facts));
             aBoolean = true;
             arrayAdapter = new BloodFactsAdapter(this, stringListMyth, stringListFacts, aBoolean, "fsffks");
         }

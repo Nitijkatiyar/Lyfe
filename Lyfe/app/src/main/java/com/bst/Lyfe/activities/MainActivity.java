@@ -79,27 +79,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.equals(tabDonate)) {
             tabImageDonate.setImageResource(R.mipmap.blood_donate_selected);
             tabTextDonate.setVisibility(View.VISIBLE);
-            toolbar.setTitle("Donate");
+            toolbar.setTitle(""+getResources().getString(R.string.donate));
             changeFragmentTo(new DonateFragment());
         } else if (v.equals(tabRequest)) {
             tabImageRequest.setImageResource(R.mipmap.blood_request_selected);
             tabTextRequest.setVisibility(View.VISIBLE);
-            toolbar.setTitle("Request");
+            toolbar.setTitle(""+getResources().getString(R.string.request));
             changeFragmentTo(new RequestBloodFragment());
         } else if (v.equals(tabNotification)) {
             tabImageNotification.setImageResource(R.mipmap.notification_selected);
             tabTextNotification.setVisibility(View.VISIBLE);
-            toolbar.setTitle("Notification");
+            toolbar.setTitle(""+getResources().getString(R.string.notification));
             changeFragmentTo(new NotificationFragment());
         } else if (v.equals(tabProfile)) {
             tabImageProfile.setImageResource(R.mipmap.user_profile_selected);
             tabTextProfile.setVisibility(View.VISIBLE);
-            toolbar.setTitle("Profile");
+            toolbar.setTitle(""+getResources().getString(R.string.profile));
             changeFragmentTo(new ProfileFragment());
         } else if (v.equals(tabMore)) {
             tabImageMore.setImageResource(R.mipmap.more_selected);
             tabTextMore.setVisibility(View.VISIBLE);
-            toolbar.setTitle("More");
+            toolbar.setTitle(""+getResources().getString(R.string.more));
             changeFragmentTo(new MoreFragment());
         }
     }
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             super.onBackPressed();
         }
         this.app_closed = true;
-        Snackbar snackbar = Snackbar.make(mainLayout, "Press again to exit.", Snackbar.LENGTH_SHORT);
+        Snackbar snackbar = Snackbar.make(mainLayout, ""+getResources().getString(R.string.pree_exit), Snackbar.LENGTH_SHORT);
         snackbar.getView();
         TextView textView = (TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
         textView.setTextColor(Color.WHITE);

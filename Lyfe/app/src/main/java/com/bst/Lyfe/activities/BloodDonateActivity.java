@@ -38,7 +38,7 @@ public class BloodDonateActivity extends AppCompatActivity {
         activityChanger = new ActivityChanger(BloodDonateActivity.this);
         expandable_list = (ExpandableListView) findViewById(R.id.expandable_list);
         textview=(TextView)findViewById(R.id.textview);
-        textview.setText("Donate Blood");
+        textview.setText(""+getResources().getString(R.string.donate_blood));
          textday= (TextView)findViewById(R.id.textday);
         textday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +61,8 @@ public class BloodDonateActivity extends AppCompatActivity {
     }
 
     public void setGroupParents() {
-        parentItems.add("Donating Blood");
-        parentItems.add("About Blood");
+        parentItems.add(""+getResources().getString(R.string.donating_blood));
+        parentItems.add(""+getResources().getString(R.string.about_blood));
 
 
     }
@@ -72,17 +72,17 @@ public class BloodDonateActivity extends AppCompatActivity {
 
 
         ArrayList<String> child = new ArrayList<String>();
-        child.add("Am i eligible");
-        child.add("Detailed eligibility criteria");
-        child.add("Why should donate blood");
-        child.add("Donation Process");
-        child.add("Different ways to donate");
+        child.add(""+getResources().getString(R.string.i_am_eligible));
+        child.add(""+getResources().getString(R.string.detaild));
+        child.add(""+getResources().getString(R.string.why_donate));
+        child.add(""+getResources().getString(R.string.process_donation));
+        child.add(""+getResources().getString(R.string.diff_donate));
         childItems.add(child);
 
         child = new ArrayList<String>();
-        child.add("What are blood groups");
-        child.add("Inheritance of blood groups");
-        child.add("Blood components");
+        child.add(""+getResources().getString(R.string.what_are));
+        child.add(""+getResources().getString(R.string.inheritance_of_group));
+        child.add(""+getResources().getString(R.string.blood_components));
         childItems.add(child);
 
 

@@ -24,6 +24,27 @@
     <string name="enterpin">Enter PIN</string>
     <string name="logout">Are u sure u want to logout?</string>
     <string name="pin_success">PIN created successfully</string>
+    <string name="donate_blood">Donate Blood</string>
+    <string name="donating_blood">Donating Blood</string>
+    <string name="about_blood">About Blood</string>
+    <string name="i_am_eligible">Am i eligible</string>
+    <string name="detaild">Detailed eligibility criteria</string>
+    <string name="why_donate">Why should donate blood</string>
+    <string name="process_donation">Donation Process</string>
+    <string name="diff_donate">Different ways to donate</string>
+    <string name="what_are">What are blood groups</string>
+    <string name="inheritance_of_group">Inheritance of blood groups</string>
+    <string name="blood_components">Blood components</string>
+    <string name="myts_vs_facts">Myths vs Facts about blood donation</string>
+    <string name="donate">Donate</string>
+    <string name="request">Request</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
+    <string name="more">More</string>
+    <string name="pree_exit">Press again to exit.</string>
+    <string name="pin_not_match">PIN did not match</string>
+    <string name="enter_6_digit">Please enter 6 digit PIN</string>
+    <string name="give_hope">Give Hope</string>
 
     <string-array name="eligibilty">
         <item>You must have eaten some food during the four hours prior to donation.</item>
