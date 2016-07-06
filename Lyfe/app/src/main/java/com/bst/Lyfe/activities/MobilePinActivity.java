@@ -64,11 +64,11 @@ public class MobilePinActivity extends AppCompatActivity {
                         finish();
 
                     } else {
-                        Snackbar.make(view, "PIN did not match", Snackbar.LENGTH_LONG)
+                        Snackbar.make(view, ""+getResources().getString(R.string.pin_not_match), Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     }
                 } else {
-                    Snackbar.make(view, "Please enter 6 digit PIN", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, ""+getResources().getString(R.string.enter_6_digit), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
 
                 }

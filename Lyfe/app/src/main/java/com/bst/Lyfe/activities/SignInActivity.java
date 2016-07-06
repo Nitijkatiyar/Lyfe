@@ -120,7 +120,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 if (_userName.getText().toString().length() > 0 && _password.getText().toString().length() > 0) {
                     if (_password.getText().toString().trim().length() >= 6) {
-                        activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP  | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+                        activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                     } else {
                         Snackbar.make(v, "Password is too short", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
@@ -191,15 +191,15 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
     private void getUserInfoFromFacebook(final GraphUser user) {
 
+        Preferences.setBirthday(SignInActivity.this, user.getBirthday());
+        Preferences.setEnailId(SignInActivity.this, user.asMap().get("email").toString());
+        Preferences.setFirstName(SignInActivity.this, user.getFirstName());
+        Preferences.setGender(SignInActivity.this, (String) user.getProperty("gender"));
+        Preferences.setLastName(SignInActivity.this, user.getLastName());
+        Preferences.setName(SignInActivity.this, user.getUsername());
+        Preferences.setUserId(SignInActivity.this, user.getId());
+        Preferences.setUserName(SignInActivity.this, user.getName());
 
-        Preferences.setPrefrences(this, Preferences.USER_ID, user.getId());
-        Preferences.setPrefrences(this, Preferences.NAME, user.getName());
-        Preferences.setPrefrences(this, Preferences.USER_NAME, user.getUsername());
-        Preferences.setPrefrences(this, Preferences.FIRST_NAME, user.getFirstName());
-        Preferences.setPrefrences(this, Preferences.LAST_NAME, user.getLastName());
-        Preferences.setPrefrences(this, Preferences.BIRTHDAY, user.getBirthday());
-        Preferences.setPrefrences(this, Preferences.GENDER, (String) user.getProperty("gender"));
-        Preferences.setPrefrences(this, Preferences.EMAIL_ID, user.asMap().get("email").toString());
         Log.e("email", "" + user.asMap().get("email").toString());
 
 
@@ -239,32 +239,19 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         if (result.isSuccess()) {
             //Getting google account
             GoogleSignInAccount acct = result.getSignInAccount();
-            Preferences.setPrefrences(this, Preferences.USER_ID, acct.getId());
-            Preferences.setPrefrences(this, Preferences.NAME, acct.getDisplayName());
-            Preferences.setPrefrences(this, Preferences.USER_NAME, acct.getEmail());
+            Preferences.setName(SignInActivity.this, acct.getEmail());
+            Preferences.setEnailId(SignInActivity.this, acct.getEmail());
+            Preferences.setUserId(SignInActivity.this, acct.getId());
+            Preferences.setUserName(SignInActivity.this, acct.getDisplayName());
+
+
             Log.e("Email", "" + acct.getEmail());
             Log.e("UserName", "" + acct.getDisplayName());
+
             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
             startActivity(intent);
 
-            //Displaying name and email
-//            textViewName.setText(acct.getDisplayName());
-//            textViewEmail.setText(acct.getEmail());
-//
-//            //Initializing image loader
-//            imageLoader = CustomVolleyRequest.getInstance(this.getApplicationContext())
-//                    .getImageLoader();
-//
-//            imageLoader.get(acct.getPhotoUrl().toString(),
-//                    ImageLoader.getImageListener(profilePhoto,
-//                            R.mipmap.ic_launcher,
-//                            R.mipmap.ic_launcher));
-//
-//            //Loading image
-//            profilePhoto.setImageUrl(acct.getPhotoUrl().toString(), imageLoader);
-
         } else {
-            //If login fails
             Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
         }
     }

@@ -49,7 +49,7 @@ public class OverviewActivity extends Activity {
                 new ActivityChanger(OverviewActivity.this).startActivity(new Intent(OverviewActivity.this, SignInActivity.class));
             }
         });
-        titleTop = new String[]{"Give Hope", "You Don't have to be a doctor to save lives",
+        titleTop = new String[]{"" + getResources().getString(R.string.give_hope), "You Don't have to be a doctor to save lives",
                 "You are a hero to someone, somewhere, who received your gracious gift of life", "Give the Gift of Life"};
 
         titleMiddle = new String[]{"Give Blood",

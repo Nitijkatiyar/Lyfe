@@ -29,37 +29,29 @@ public class BloodDonateActivity extends AppCompatActivity {
     private ArrayList<ArrayList<String>> childItems = new ArrayList();
     MyExpandableAdapter adapter;
     FrameLayout frameLayout;
-
-    public Toolbar toolbar;
-
     TextView textday;
     ActivityChanger activityChanger;
-
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.donate_blood_activity);
+        activityChanger = new ActivityChanger(BloodDonateActivity.this);
+        expandable_list = (ExpandableListView) findViewById(R.id.expandable_list);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Donate Blood");
+        toolbar.setTitle("" + getResources().getString(R.string.donate_blood));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-        activityChanger = new ActivityChanger(BloodDonateActivity.this);
-
-        expandable_list = (ExpandableListView) findViewById(R.id.expandable_list);
-
         textday = (TextView) findViewById(R.id.textday);
         textday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 activityChanger.startActivity(new Intent(BloodDonateActivity.this, ActivityBloodDonateInfo.class).putExtra("day_blood_donor", "day_blood_donor"));
-
             }
         });
         setGroupParents();
@@ -76,8 +68,8 @@ public class BloodDonateActivity extends AppCompatActivity {
     }
 
     public void setGroupParents() {
-        parentItems.add("Donating Blood");
-        parentItems.add("About Blood");
+        parentItems.add("" + getResources().getString(R.string.donating_blood));
+        parentItems.add("" + getResources().getString(R.string.about_blood));
 
 
     }
@@ -87,17 +79,17 @@ public class BloodDonateActivity extends AppCompatActivity {
 
 
         ArrayList<String> child = new ArrayList<String>();
-        child.add("Am i eligible");
-        child.add("Detailed eligibility criteria");
-        child.add("Why should donate blood");
-        child.add("Donation Process");
-        child.add("Different ways to donate");
+        child.add("" + getResources().getString(R.string.i_am_eligible));
+        child.add("" + getResources().getString(R.string.detaild));
+        child.add("" + getResources().getString(R.string.why_donate));
+        child.add("" + getResources().getString(R.string.process_donation));
+        child.add("" + getResources().getString(R.string.diff_donate));
         childItems.add(child);
 
         child = new ArrayList<String>();
-        child.add("What are blood groups");
-        child.add("Inheritance of blood groups");
-        child.add("Blood components");
+        child.add("" + getResources().getString(R.string.what_are));
+        child.add("" + getResources().getString(R.string.inheritance_of_group));
+        child.add("" + getResources().getString(R.string.blood_components));
         childItems.add(child);
 
 
@@ -120,5 +112,4 @@ public class BloodDonateActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }
