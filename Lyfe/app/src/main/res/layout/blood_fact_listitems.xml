@@ -12,14 +12,18 @@
         android:background="@color/colorWhite"
         android:minHeight="60dp"
         android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:layout_marginTop="5dp"
+
+       >
 
         <TextView
             android:id="@+id/bloodDots"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="*"
+            android:text=""
+            android:paddingRight="10dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:visibility="gone" />
@@ -30,7 +34,11 @@
             android:layout_height="wrap_content"
             android:text="ACGDGDGDGDGDGDGDGDG"
             android:textColor="@color/colorTextSecondry"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"/>
 
 
     </LinearLayout>
