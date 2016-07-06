@@ -65,7 +65,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:text="Create Mobile PIN"
+            android:text="Change Mobile PIN"
             android:textColor="@color/colorTextSecondry"
             android:textSize="18sp" />
 

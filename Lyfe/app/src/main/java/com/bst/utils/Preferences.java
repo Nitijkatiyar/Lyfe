@@ -11,40 +11,47 @@ public class Preferences {
 
     static SharedPreferences lyfe_preference;
 
-    public static final String USER_ID = "userId";
-    public static final String NAME = "name";
-    public static final String USER_NAME = "userName";
-    public static final String FIRST_NAME = "firstName";
-    public static final String LAST_NAME = "lastName";
-    public static final String BIRTHDAY = "birthday";
-    public static final String GENDER = "gender";
-    public static final String EMAIL_ID = "emailId";
-    public static final String CREATE_PIN= "pin";
-    public static final String KEY_DEFAULT_PREFERENCE = "com.bst.lyfe";
 
+    public static final String MOBILE_PIN = "pin";
+    public static final String MOBILE_PIN_ACTIVATED = "pinactivated";
+    public static final String KEY_DEFAULT_PREFERENCE = "com.bst.lyfe";
 
 
     public static SharedPreferences getDefaultPref(Context context) {
         if (lyfe_preference == null) {
-            lyfe_preference = context.getApplicationContext().getSharedPreferences(
+            lyfe_preference = context.getSharedPreferences(
                     KEY_DEFAULT_PREFERENCE, Context.MODE_PRIVATE);
         }
         return lyfe_preference;
     }
 
-
-    public static String getPrefrence(Context context,String PrefID) {
-        return getDefaultPref(context).getString(PrefID, "NO USER FOUND");
-    }
-
-    public static void setPrefrences(Context context,String PrefID, String userId) {
+    public static void clearpreferences(Context context) {
         SharedPreferences.Editor editor = getDefaultPref(context).edit();
-        editor.putString(PrefID, userId);
+        editor.clear();
         editor.commit();
     }
 
+    public static String getMobilePin(Context context) {
+        return getDefaultPref(context).getString(
+                MOBILE_PIN, "000000");
+    }
 
+    public static void setMobilePin(Context context, String language) {
+        SharedPreferences.Editor editor = getDefaultPref(context).edit();
+        editor.putString(MOBILE_PIN, language);
+        editor.commit();
 
+    }
 
+    public static boolean isMobilePinActivated(Context context) {
+        return getDefaultPref(context).getBoolean(
+                MOBILE_PIN, false);
+    }
 
+    public static void setMobilePinActivated(Context context, boolean language) {
+        SharedPreferences.Editor editor = getDefaultPref(context).edit();
+        editor.putBoolean(MOBILE_PIN, language);
+        editor.commit();
+
+    }
 }

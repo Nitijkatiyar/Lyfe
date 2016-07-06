@@ -1,6 +1,7 @@
 package com.bst.Lyfe.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -23,17 +24,28 @@ public class MobilePinActivity extends AppCompatActivity {
     Button buttoncreatePin;
     EditText enterpin, confirmpin;
     public Toolbar toolbar;
+    Intent intent;
+    boolean pinUpdate = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mpin);
 
+        intent = getIntent();
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Create PIN");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        if (intent != null && intent.hasExtra("OPERATION")) {
+            toolbar.setTitle("Create PIN");
+            pinUpdate = false;
+            setSupportActionBar(toolbar);
+        } else {
+            toolbar.setTitle("Change PIN");
+            pinUpdate = true;
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
 
         buttoncreatePin = (Button) findViewById(R.id.createpin);
         enterpin = (EditText) findViewById(R.id.edittextcratepin);
@@ -45,9 +57,11 @@ public class MobilePinActivity extends AppCompatActivity {
                 inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 if (enterpin.getText().toString().trim().length() > 5 && confirmpin.getText().toString().trim().length() > 5) {
                     if (enterpin.getText().toString().trim().equals(confirmpin.getText().toString().trim())) {
-                        Preferences.setPrefrences(MobilePinActivity.this, Preferences.CREATE_PIN, enterpin.getText().toString());
-                        Snackbar.make(view, "" + getResources().getString(R.string.pin_success), Snackbar.LENGTH_LONG)
+                        Preferences.setMobilePin(MobilePinActivity.this, enterpin.getText().toString().trim());
+                        Preferences.setMobilePinActivated(MobilePinActivity.this, true);
+                        Snackbar.make(view, "" + getResources().getString(R.string.pin_success), Snackbar.LENGTH_SHORT)
                                 .setAction("Action", null).show();
+                        finish();
 
                     } else {
                         Snackbar.make(view, "PIN did not match", Snackbar.LENGTH_LONG)

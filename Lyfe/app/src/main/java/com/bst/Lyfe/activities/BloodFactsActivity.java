@@ -62,7 +62,7 @@ public class BloodFactsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bloodfacts);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
+        toolbar.setTitle("Blood Facts");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

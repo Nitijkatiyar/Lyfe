@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     android:background="@color/lightgraybackground"
     android:orientation="vertical">
+
     <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/toolbar"
@@ -25,11 +26,11 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
             android:background="@drawable/bg_round_rect"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="80dp">
+            android:padding="10dp">
 
 
             <EditText
@@ -38,6 +39,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
+                android:digits="0123456789"
                 android:hint="@string/enterpin"
                 android:inputType="number"
                 android:maxLength="6"
@@ -54,6 +56,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@mipmap/semitransparent_white"
+                android:digits="0123456789"
                 android:hint="@string/confirmpin"
                 android:inputType="number"
                 android:maxLength="6"
@@ -75,7 +78,7 @@
             android:layout_marginTop="20dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:text= "@string/create_Pin"
+            android:text="@string/create_Pin"
             android:textColor="@color/white" />
     </LinearLayout>
 

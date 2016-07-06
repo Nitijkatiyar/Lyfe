@@ -1,11 +1,14 @@
 package com.bst.Lyfe.activities;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -21,6 +24,7 @@ import com.bst.Lyfe.fragments.MoreFragment;
 import com.bst.Lyfe.fragments.NotificationFragment;
 import com.bst.Lyfe.fragments.ProfileFragment;
 import com.bst.Lyfe.fragments.RequestBloodFragment;
+import com.bst.utils.ActivityChanger;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Boolean app_closed = false;
@@ -30,11 +34,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView tabImageDonate, tabImageRequest, tabImageNotification, tabImageProfile, tabImageMore;
     LinearLayout mainLayout;
     private TabHost mTabHost;
+    ActivityChanger activityChanger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        activityChanger = new ActivityChanger(MainActivity.this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -69,6 +76,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tabImageDonate.setImageResource(R.mipmap.blood_donate_selected);
         tabTextDonate.setVisibility(View.VISIBLE);
         changeFragmentTo(new DonateFragment());
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Create Mobile PIN")
+                .setMessage("Please generate a 6 digit PIN for sucurely access the Lyfe!")
+                .setNeutralButton("Continue", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        activityChanger.startActivity(new Intent(MainActivity.this, MobilePinActivity.class).putExtra("OPERATION", "GENERATE"));
+                    }
+                })
+
+                .setIcon(R.mipmap.ic_password)
+                .setCancelable(false)
+                .show();
 
 
     }
