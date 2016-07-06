@@ -45,7 +45,7 @@ public class SignUpPasswordActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (_enterPass.getText().toString().trim().length() >= 6 && _reenterPass.getText().toString().trim().length() >= 6) {
                     if (_enterPass.getText().toString().trim().equals(_reenterPass.getText().toString().trim())) {
-                        activityChanger.startActivity(new Intent(SignUpPasswordActivity.this, MainActivity.class));
+                        activityChanger.startActivity(new Intent(SignUpPasswordActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK  | Intent.FLAG_ACTIVITY_NEW_TASK));
                     } else {
                         Snackbar.make(view, "Password did not match", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();

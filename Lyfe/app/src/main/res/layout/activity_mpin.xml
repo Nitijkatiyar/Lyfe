@@ -75,7 +75,7 @@
             android:layout_marginTop="20dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:text="@string/create_Pin"
+            android:text= "@string/create_Pin"
             android:textColor="@color/white" />
     </LinearLayout>
 
