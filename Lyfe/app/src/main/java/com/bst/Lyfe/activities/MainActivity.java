@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new AlertDialog.Builder(MainActivity.this)
                 .setTitle("Create Mobile PIN")
                 .setMessage("Please generate a 6 digit PIN for sucurely access the Lyfe!")
-                .setNeutralButton("Continue", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         activityChanger.startActivity(new Intent(MainActivity.this, MobilePinActivity.class).putExtra("OPERATION", "GENERATE"));
                     }
