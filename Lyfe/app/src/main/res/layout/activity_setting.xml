@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    >
+    android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:title="About us"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <RelativeLayout
         android:id="@+id/layoutnotification"
@@ -12,7 +21,7 @@
         android:layout_height="60dp"
         android:layout_marginLeft="24dp"
         android:orientation="horizontal"
-        android:paddingRight="20dp" >
+        android:paddingRight="20dp">
 
         <TextView
             android:id="@+id/enablenotification"
@@ -42,22 +51,22 @@
         android:background="@color/colorTextPrimary"></View>
 
     <RelativeLayout
+        android:id="@+id/layoutMpin"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginLeft="24dp"
         android:orientation="horizontal"
-        android:paddingRight="20dp"
-        android:id="@+id/layoutMpin">
+        android:paddingRight="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTextPrimary"
-            android:text="Create Mobile PIN"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:textSize="20sp"/>
+            android:text="Create Mobile PIN"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/image2MoreMpin"
@@ -68,28 +77,29 @@
             android:src="@mipmap/arrow_right" />
 
     </RelativeLayout>
+
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:background="@color/colorTextPrimary"></View>
 
     <RelativeLayout
+        android:id="@+id/layoutlogout"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginLeft="24dp"
         android:orientation="horizontal"
-        android:paddingRight="20dp"
-        android:id="@+id/layoutlogout">
+        android:paddingRight="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTextPrimary"
-            android:text="Logout"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:textSize="20sp"/>
+            android:text="Logout"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/morelogout"
