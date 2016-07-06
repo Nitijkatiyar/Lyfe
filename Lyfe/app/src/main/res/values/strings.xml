@@ -19,6 +19,11 @@
 
     <string name="myths">Myths:- <font fgcolor="#000000"></font></string>
     <string name="facts">Facts:- <font fgcolor="#ffff0000"></font></string>
+    <string name="create_Pin">CreatePIN</string>
+    <string name="confirmpin">Confirm PIN</string>
+    <string name="enterpin">Enter PIN</string>
+    <string name="logout">Are u sure u want to logout?</string>
+    <string name="pin_success">PIN created successfully</string>
 
     <string-array name="eligibilty">
         <item>You must have eaten some food during the four hours prior to donation.</item>
@@ -109,5 +114,4 @@
 
     </string-array>
 
->>>>>>> 35af43bc2d97ad3b9c4de40b738b23d76bffc9b1
 </resources>

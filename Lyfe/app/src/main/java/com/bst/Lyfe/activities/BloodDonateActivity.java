@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.bst.Lyfe.R;
 import com.bst.Lyfe.adapter.MyExpandableAdapter;
+import com.bst.utils.ActivityChanger;
 
 import java.util.ArrayList;
 
@@ -28,8 +29,12 @@ public class BloodDonateActivity extends AppCompatActivity {
     private ArrayList<ArrayList<String>> childItems = new ArrayList();
     MyExpandableAdapter adapter;
     FrameLayout frameLayout;
-    TextView textday;
+
     public Toolbar toolbar;
+
+    TextView textday;
+    ActivityChanger activityChanger;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +48,18 @@ public class BloodDonateActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
+        activityChanger = new ActivityChanger(BloodDonateActivity.this);
+
         expandable_list = (ExpandableListView) findViewById(R.id.expandable_list);
 
         textday = (TextView) findViewById(R.id.textday);
         textday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BloodDonateActivity.this, ActivityBloodDonateInfo.class);
-                intent.putExtra("day_blood_donor", "day_blood_donor");
-                startActivity(intent);
+
+
+                activityChanger.startActivity(new Intent(BloodDonateActivity.this, ActivityBloodDonateInfo.class).putExtra("day_blood_donor", "day_blood_donor"));
+
             }
         });
         setGroupParents();

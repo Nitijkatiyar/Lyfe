@@ -19,7 +19,9 @@ public class Preferences {
     public static final String BIRTHDAY = "birthday";
     public static final String GENDER = "gender";
     public static final String EMAIL_ID = "emailId";
+    public static final String CREATE_PIN= "pin";
     public static final String KEY_DEFAULT_PREFERENCE = "com.bst.lyfe";
+
 
 
     public static SharedPreferences getDefaultPref(Context context) {
