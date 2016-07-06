@@ -43,7 +43,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
+public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     Button _login, button_facebook, button_google;
     TextView _signup;
@@ -104,7 +104,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         });
 
 
-       
         _signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,7 +120,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 if (_userName.getText().toString().length() > 0 && _password.getText().toString().length() > 0) {
                     if (_password.getText().toString().trim().length() >= 6) {
-                        activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                        activityChanger.startActivity(new Intent(SignInActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP  | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                     } else {
                         Snackbar.make(v, "Password is too short", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
@@ -143,6 +142,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         //Starting intent for result
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
     private void getFacebookUserInfo() {
         Session.openActiveSession(this, true, new Session.StatusCallback() {
 
@@ -200,11 +200,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         Preferences.setPrefrences(this, Preferences.BIRTHDAY, user.getBirthday());
         Preferences.setPrefrences(this, Preferences.GENDER, (String) user.getProperty("gender"));
         Preferences.setPrefrences(this, Preferences.EMAIL_ID, user.asMap().get("email").toString());
-        Log.e("email",""+user.asMap().get("email").toString());
+        Log.e("email", "" + user.asMap().get("email").toString());
 
 
     }
-
 
 
     private void getKeyHash() {
@@ -243,9 +242,9 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             Preferences.setPrefrences(this, Preferences.USER_ID, acct.getId());
             Preferences.setPrefrences(this, Preferences.NAME, acct.getDisplayName());
             Preferences.setPrefrences(this, Preferences.USER_NAME, acct.getEmail());
-            Log.e("Email",""+acct.getEmail());
-            Log.e("UserName",""+acct.getDisplayName());
-            Intent intent = new Intent(SignInActivity.this,MainActivity.class);
+            Log.e("Email", "" + acct.getEmail());
+            Log.e("UserName", "" + acct.getDisplayName());
+            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
             startActivity(intent);
 
             //Displaying name and email
@@ -291,8 +290,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
 
     @Override

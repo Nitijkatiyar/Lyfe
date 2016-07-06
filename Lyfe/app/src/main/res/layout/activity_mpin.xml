@@ -3,7 +3,15 @@
     android:layout_height="match_parent"
     android:background="@color/lightgraybackground"
     android:orientation="vertical">
-
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:title="About us"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -67,7 +75,7 @@
             android:layout_marginTop="20dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:text="@string/create_Pin"
+            android:text= "@string/create_Pin"
             android:textColor="@color/white" />
     </LinearLayout>
 

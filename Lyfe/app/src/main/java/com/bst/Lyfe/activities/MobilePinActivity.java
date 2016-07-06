@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -20,11 +22,19 @@ public class MobilePinActivity extends AppCompatActivity {
 
     Button buttoncreatePin;
     EditText enterpin, confirmpin;
+    public Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mpin);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Create PIN");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         buttoncreatePin = (Button) findViewById(R.id.createpin);
         enterpin = (EditText) findViewById(R.id.edittextcratepin);
         confirmpin = (EditText) findViewById(R.id.edittextconfirmedPin);
@@ -36,7 +46,7 @@ public class MobilePinActivity extends AppCompatActivity {
                 if (enterpin.getText().toString().trim().length() > 5 && confirmpin.getText().toString().trim().length() > 5) {
                     if (enterpin.getText().toString().trim().equals(confirmpin.getText().toString().trim())) {
                         Preferences.setPrefrences(MobilePinActivity.this, Preferences.CREATE_PIN, enterpin.getText().toString());
-                        Snackbar.make(view, ""+getResources().getString(R.string.pin_success), Snackbar.LENGTH_LONG)
+                        Snackbar.make(view, "" + getResources().getString(R.string.pin_success), Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
 
                     } else {
@@ -50,5 +60,14 @@ public class MobilePinActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

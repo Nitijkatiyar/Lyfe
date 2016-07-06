@@ -17,9 +17,9 @@
     <string name="termsandcondition"><html>I have read and accept the <span style="color: #7777f3;"><u>Terms &amp; Conditions</u></span></html></string>
 
 
-    <string name="myths">Myths: <font fgcolor="#000000"></font></string>
-    <string name="facts">Facts: <font fgcolor="#ffff0000"></font></string>
-    <string name="create_Pin">CreatePIN</string>
+    <string name="myths">Myths:- <font fgcolor="#000000"></font></string>
+    <string name="facts">Facts:- <font fgcolor="#ffff0000"></font></string>
+    <string name="create_Pin">Create PIN</string>
     <string name="confirmpin">Confirm PIN</string>
     <string name="enterpin">Enter PIN</string>
     <string name="logout">Are u sure u want to logout?</string>
@@ -135,5 +135,4 @@
 
     </string-array>
 
->>>>>>> 35af43bc2d97ad3b9c4de40b738b23d76bffc9b1
 </resources>

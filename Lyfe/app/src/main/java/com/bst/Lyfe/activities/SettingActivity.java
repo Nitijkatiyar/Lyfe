@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -25,10 +27,19 @@ public class SettingActivity extends AppCompatActivity {
 
     RelativeLayout layout_mpin, layout_logout, layout_notification;
 
+    public Toolbar toolbar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Settings");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         activityChanger = new ActivityChanger(SettingActivity.this);
         layout_logout = (RelativeLayout) findViewById(R.id.layoutlogout);
         layout_mpin = (RelativeLayout) findViewById(R.id.layoutMpin);
@@ -68,7 +79,7 @@ public class SettingActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         customDialog.dismiss();
-                        finish();
+                        activityChanger.startActivity(new Intent(SettingActivity.this, SignInActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
 
                     }
                 });
@@ -92,5 +103,14 @@ public class SettingActivity extends AppCompatActivity {
                 activityChanger.startActivity(new Intent(SettingActivity.this, MobilePinActivity.class));
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
