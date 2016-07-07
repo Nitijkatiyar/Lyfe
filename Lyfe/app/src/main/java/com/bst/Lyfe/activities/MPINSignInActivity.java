@@ -7,12 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.bst.Lyfe.R;
 import com.bst.utils.ActivityChanger;
+import com.bst.utils.Preferences;
 
 /**
  * Created by arun on 22-06-2016.
@@ -57,6 +60,14 @@ public class MPINSignInActivity extends AppCompatActivity implements View.OnClic
         number9.setOnClickListener(this);
         backpress.setOnClickListener(this);
 
+        View.OnTouchListener otl = new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return true; // the listener has consumed the event
+            }
+        };
+        editText.setOnTouchListener(otl);
+
+
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -70,8 +81,15 @@ public class MPINSignInActivity extends AppCompatActivity implements View.OnClic
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (editText.getText().toString().trim().length() == 4) {
-                    activityChanger.startActivity(new Intent(MPINSignInActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+                editText.setSelection(editText.getText().length());
+                if (editText.getText().toString().trim().length() == 6) {
+                    if (Preferences.getMobilePin(MPINSignInActivity.this).equalsIgnoreCase(editText.getText().toString().trim())) {
+                        activityChanger.startActivity(new Intent(MPINSignInActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+                    } else {
+                        Toast.makeText(MPINSignInActivity.this, "Incorrect Passcode", Toast.LENGTH_SHORT).show();
+                        editText.setText("");
+
+                    }
                 }
             }
         });
@@ -103,7 +121,7 @@ public class MPINSignInActivity extends AppCompatActivity implements View.OnClic
             editText.setText(editText.getText().toString().trim() + "9");
         } else if (v.equals(backpress)) {
             if (editText.getText().toString().trim().length() > 0) {
-                editText.setText(editText.getText().toString().trim().substring(0, editText.getText().toString().trim().length() - 1) + "9");
+                editText.setText(editText.getText().toString().trim().substring(0, editText.getText().toString().trim().length() - 1));
             }
         }
     }

@@ -2,168 +2,191 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_grey"
+    android:background="@mipmap/image_background"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Enter passcode"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edittext"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round_rect"
+            android:gravity="center"
+            android:hint="----"
+            android:inputType="numberPassword"
+            android:textColor="@color/colorTextSecondry"
+            android:textColorHint="@color/colorTextSecondry"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/number1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="1"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/number2"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="2"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/number3"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="3"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/number4"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="4"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/number5"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="5"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/number6"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="6"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/number7"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="7"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/number8"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="8"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/number9"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="9"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/passcode_button_selector"
+
+                    android:textColor="@color/colorWhite"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/number0"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="0"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/backspace"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/passcode_button_selector"
+                    android:text="Back"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:text="Enter passcode"
-        android:textColor="@color/colorTextSecondry"
+        android:text="Forgot passcode?"
+        android:textColor="@color/colorWhite"
         android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/edittext"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_round_rect"
-        android:hint="----"
-        android:textSize="40sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/number1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="1"
-                android:textColor="@color/colorPrimary" />
-
-            <Button
-                android:id="@+id/number2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="2"
-                android:textColor="@color/colorPrimary" />
-
-            <Button
-                android:id="@+id/number3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="3"
-                android:textColor="@color/colorPrimary" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/number4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="4"
-                android:textColor="@color/colorPrimary" />
-
-            <Button
-                android:id="@+id/number5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="5"
-                android:textColor="@color/colorPrimary" />
-
-            <Button
-                android:id="@+id/number6"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="6"
-                android:textColor="@color/colorPrimary" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/number7"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="7"
-                android:textColor="@color/colorPrimary" />
-
-            <Button
-                android:id="@+id/number8"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="8"
-                android:textColor="@color/colorPrimary" />
-
-            <Button
-                android:id="@+id/number9"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="9"
-                android:textColor="@color/colorPrimary" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-
-                android:textColor="@color/colorPrimary"
-                android:visibility="invisible" />
-
-            <Button
-                android:id="@+id/number0"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="0"
-                android:textColor="@color/colorPrimary" />
-
-            <Button
-                android:id="@+id/backspace"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/com_facebook_button_blue_focused"
-                android:text="Back"
-                android:textColor="@color/colorPrimary" />
-        </LinearLayout>
-    </LinearLayout>
 </LinearLayout>

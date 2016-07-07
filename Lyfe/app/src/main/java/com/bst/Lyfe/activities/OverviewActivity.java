@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.bst.Lyfe.R;
 import com.bst.utils.ActivityChanger;
+import com.bst.utils.Preferences;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -28,6 +29,10 @@ public class OverviewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overview);
+
+        if (Preferences.isMobilePinActivated(OverviewActivity.this)) {
+            new ActivityChanger(OverviewActivity.this).startActivity(new Intent(OverviewActivity.this, MPINSignInActivity.class));
+        }
 
         indicator1 = (View) findViewById(R.id.indicator1);
         indicator2 = (View) findViewById(R.id.indicator2);

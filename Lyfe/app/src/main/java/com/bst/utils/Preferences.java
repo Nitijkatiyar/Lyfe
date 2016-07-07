@@ -24,6 +24,7 @@ public class Preferences {
     public static final String BIRTHDAY = "birthday";
     public static final String GENDER = "gender";
     public static final String EMAIL_ID = "emailid";
+    public static final String IS_REGISTERED = "isregistered";
 
 
     public static SharedPreferences getDefaultPref(Context context) {
@@ -54,12 +55,12 @@ public class Preferences {
 
     public static boolean isMobilePinActivated(Context context) {
         return getDefaultPref(context).getBoolean(
-                MOBILE_PIN, false);
+                MOBILE_PIN_ACTIVATED, false);
     }
 
     public static void setMobilePinActivated(Context context, boolean language) {
         SharedPreferences.Editor editor = getDefaultPref(context).edit();
-        editor.putBoolean(MOBILE_PIN, language);
+        editor.putBoolean(MOBILE_PIN_ACTIVATED, language);
         editor.commit();
 
     }
@@ -150,6 +151,17 @@ public class Preferences {
     public static void setGender(Context context, String language) {
         SharedPreferences.Editor editor = getDefaultPref(context).edit();
         editor.putString(GENDER, language);
+        editor.commit();
+    }
+
+    public static boolean isRegistered(Context context) {
+        return getDefaultPref(context).getBoolean(
+                IS_REGISTERED, false);
+    }
+
+    public static void setisRegistered(Context context, boolean language) {
+        SharedPreferences.Editor editor = getDefaultPref(context).edit();
+        editor.putBoolean(IS_REGISTERED, language);
         editor.commit();
     }
 }
