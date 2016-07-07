@@ -107,7 +107,7 @@
         <item>Group B – has only the B antigen on red cells (and A antibody in the plasma)</item>
         <item>Group AB – has both A and B antigens on red cells (but neither A nor B antibody in the plasma)</item>
         <item>Group O – has neither A nor B antigens on red cells (but both A and B antibody are in the plasma)</item>
-        <item>A1 Negative (A1 −ve),A1 Positive (A1 +ve),A1B Negative (A1B −ve),A1B Positive (A1B +ve),A2 Negative (A2 −ve),A2 Positive (A2 +ve),A2B Negative (A2B −ve),A2B Positive (A2B +ve),B Negative (B −ve),B Positive (B +ve),B1 Positive (B1 +ve),O Negative (O −ve),O Positive (O+ve)</item>
+        <item> A1 Negative (A1 −ve)\nA1 Positive (A1 +ve)\nA1B Negative (A1B −ve)\nA1B Positive (A1B +ve)\nA2 Negative (A2 −ve)\nA2 Positive (A2 +ve)\nA2B Negative (A2B −ve)\nA2B Positive (A2B +ve)\nB Negative (B −ve)\nB Positive (B +ve)\nB1 Positive (B1 +ve)\nO Negative (O −ve)\nO Positive (O+ve)</item>
 
     </string-array>
 

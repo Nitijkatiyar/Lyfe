@@ -74,7 +74,7 @@ public class BloodFactsAdapter extends RecyclerView.Adapter<BloodFactsAdapter.Bl
         } else if (a.equalsIgnoreCase("String")) {
             holder._bloodText.setText("" + datablooddonateinfo.get(position));
         } else if (flag == false) {
-            holder._bloodText.setText("* " + data.get(position));
+            holder._bloodText.setText("" + data.get(position));
 
         }
 
