@@ -2,8 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/image_background"
+    android:background="@color/white"
     android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:title="About us"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,8 +28,9 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:text="Enter passcode"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp" />
+            android:textColor="@color/colorTextSecondry"
+            android:textSize="18sp"
+            android:visibility="gone"/>
 
         <EditText
             android:id="@+id/edittext"
@@ -29,11 +40,11 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_round_rect"
             android:gravity="center"
-            android:hint="----"
+            android:hint="Enter PIN"
             android:inputType="numberPassword"
             android:textColor="@color/colorTextSecondry"
             android:textColorHint="@color/colorTextSecondry"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,29 +61,29 @@
 
                 <Button
                     android:id="@+id/number1"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="1"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
 
                 <Button
                     android:id="@+id/number2"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="2"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
 
                 <Button
                     android:id="@+id/number3"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="3"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -84,29 +95,29 @@
 
                 <Button
                     android:id="@+id/number4"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="4"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
 
                 <Button
                     android:id="@+id/number5"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="5"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
 
                 <Button
                     android:id="@+id/number6"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="6"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -118,29 +129,29 @@
 
                 <Button
                     android:id="@+id/number7"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="7"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
 
                 <Button
                     android:id="@+id/number8"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="8"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
 
                 <Button
                     android:id="@+id/number9"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="9"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -151,30 +162,35 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/passcode_button_selector"
+                    android:text="@string/forgot"
+                    android:paddingTop="15dp"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/forgotpin"
+                    android:textAllCaps="false"
 
-                    android:textColor="@color/colorWhite"
-                    android:visibility="invisible" />
+                    />
 
                 <Button
                     android:id="@+id/number0"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="0"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black" />
 
                 <Button
                     android:id="@+id/backspace"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/passcode_button_selector"
                     android:text="Back"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@android:color/black"
+                    android:textAllCaps="false"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -187,6 +203,7 @@
         android:gravity="center_horizontal"
         android:text="Forgot passcode?"
         android:textColor="@color/colorWhite"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone"/>
 
 </LinearLayout>

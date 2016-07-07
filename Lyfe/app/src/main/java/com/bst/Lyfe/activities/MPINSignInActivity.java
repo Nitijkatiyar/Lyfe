@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +33,11 @@ public class MPINSignInActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_mpinsignin);
 
         activityChanger = new ActivityChanger(MPINSignInActivity.this);
-
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("PIN");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         number0 = (Button) findViewById(R.id.number0);
         number1 = (Button) findViewById(R.id.number1);
         number2 = (Button) findViewById(R.id.number2);
@@ -124,5 +129,14 @@ public class MPINSignInActivity extends AppCompatActivity implements View.OnClic
                 editText.setText(editText.getText().toString().trim().substring(0, editText.getText().toString().trim().length() - 1));
             }
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
